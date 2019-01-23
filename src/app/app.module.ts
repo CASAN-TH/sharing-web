@@ -18,7 +18,7 @@ import { AuthModule } from "ng6-md-auth";
 import { InfoDonateComponent } from './pages/info-donate/info-donate.component';
 import { DonateDetailComponent } from './pages/donate-detail/donate-detail.component';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatButtonModule } from '@angular/material/button';
 
 const apiSrvCfg = environment;
 @NgModule({
@@ -38,6 +38,7 @@ const apiSrvCfg = environment;
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    MatButtonModule,
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: "never" }),
     HttpClientModule,
     NgxSpinnerModule,
