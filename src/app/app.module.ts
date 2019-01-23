@@ -17,6 +17,7 @@ import { environment } from "src/environments/environment";
 import { AuthModule } from "ng6-md-auth";
 import { InfoDonateComponent } from './pages/info-donate/info-donate.component';
 import { DonateDetailComponent } from './pages/donate-detail/donate-detail.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 const apiSrvCfg = environment;
@@ -40,9 +41,13 @@ const apiSrvCfg = environment;
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: "never" }),
     HttpClientModule,
     NgxSpinnerModule,
+    MatIconModule,
     AuthModule.forRoot(apiSrvCfg)
+  ],
+  exports: [
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
