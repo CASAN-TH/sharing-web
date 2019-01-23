@@ -16,6 +16,7 @@ import { HeaderToolbarComponent } from "./components/header-toolbar/header-toolb
 import { environment } from "src/environments/environment";
 import { AuthModule } from "ng6-md-auth";
 import { InfoDonateComponent } from './pages/info-donate/info-donate.component';
+import { DonateDetailComponent } from './pages/donate-detail/donate-detail.component';
 import { MatIconModule } from '@angular/material/icon';
 
 
@@ -28,7 +29,8 @@ const apiSrvCfg = environment;
     RegisterComponent,
     ForgotComponent,
     HeaderToolbarComponent,
-    InfoDonateComponent
+    InfoDonateComponent,
+    DonateDetailComponent
   ],
   imports: [
     BrowserModule,
