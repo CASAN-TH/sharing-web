@@ -6,6 +6,7 @@ import { RegisterComponent } from "./pages/register/register.component";
 import { ForgotComponent } from "./pages/forgot/forgot.component";
 import { AuthGuardService } from "ng6-md-auth";
 import { InfoDonateComponent} from "./pages/info-donate/info-donate.component"
+import { DonateDetailComponent } from "./pages/donate-detail/donate-detail.component";
 
 const routes: Routes = [
   {
@@ -13,11 +14,13 @@ const routes: Routes = [
     redirectTo: "home",
     pathMatch: "full"
   },
-  { path: "home", component: HomeComponent, canActivate: [AuthGuardService] },
+  { path: "home", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "forgot", component: ForgotComponent },
   { path: "info-donate", component: InfoDonateComponent },
+  { path: "donate-detail", component: DonateDetailComponent },
+
   
 ];
 
