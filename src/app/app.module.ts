@@ -19,6 +19,8 @@ import { InfoDonateComponent } from './pages/info-donate/info-donate.component';
 import { DonateDetailComponent } from './pages/donate-detail/donate-detail.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 const apiSrvCfg = environment;
 @NgModule({
@@ -43,6 +45,8 @@ const apiSrvCfg = environment;
     HttpClientModule,
     NgxSpinnerModule,
     MatIconModule,
+    MatInputModule,
+    MatSelectModule,
     AuthModule.forRoot(apiSrvCfg)
   ],
   exports: [
