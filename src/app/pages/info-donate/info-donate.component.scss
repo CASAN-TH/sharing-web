@@ -1,3 +1,14 @@
 .border-upload-img {
     border: dashed 1px;
+    height: 10rem;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-upload-img{
+   font-size: 50px;
 }
