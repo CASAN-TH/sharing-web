@@ -1,0 +1,49 @@
+{
+    "data" : [
+            {
+                "_id" : "001",
+                "name" : "เสื้อกล้าม",
+                "size" : "S",
+                "status" : "true",
+                "image" : {"url" : "https://www.presstoday.news/wp-content/uploads/2018/04/%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B8%A1-%E0%B8%8A%E0%B8%B2%E0%B8%A2.jpg"},
+                "donator" : "001"
+            },{
+                "_id" : "002",
+                "name" : "เสื้อเเขนยาว",
+                "size" : "M",
+                "status" : "true",
+                "image" : {"url" : "https://s7.tctcdn.com/productimages/large/0557917_1.jpg"},
+                "donator" : "002"
+            },{
+                "_id" : "003",
+                "name" : "เสื้อเชิ้ต",
+                "size" : "L",
+                "status" : "true",
+                "image" : {"url" : "https://media.shopat24.com/pdmain/209318_01_arrow_shirt_az741whmx7s.jpg"},
+                "donator" : "003"
+            },{
+                "_id" : "004",
+                "name" : "เสื้อเเขนสั้น",
+                "size" : "XL",
+                "status" : "true",
+                "image" : {"url" : "https://d126drxy0lew0u.cloudfront.net/catalog/product/large_image/61_412756.jpg"},
+                "donator" : "004"
+            },{
+                "_id" : "005",
+                "name" : "เสื้อกันหนาว",
+                "size" : "L",
+                "status" : "true",
+                "image" : {"url" : "https://ae01.alicdn.com/kf/HTB1HspDNFXXXXcqXpXXxh4dFXXXf/Rxlzoon-Gudetama.jpeg_640x640.jpeg"},
+                "donator" : "005"
+            },{
+                "_id" : "006",
+                "name" : "เสื้อกั๊ก",
+                "size" : "L",
+                "status" : "true",
+                "image" : {"url" : "http://img1.11thcdn.com/g/4/1/1/4/1/3/8/0/0/0/4114138_B.jpg"},
+                "donator" : "006"
+            }
+        
+        ]
+
+}
