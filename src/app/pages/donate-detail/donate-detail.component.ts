@@ -19,6 +19,7 @@ export class DonateDetailComponent implements OnInit {
   async ngOnInit() {
     this.data = await this.donateDetailService.getDonateDetail();
     this.imageArray = this.data.data.images
+    console.log(this.data)
     console.log(this.imageArray)
   }
 

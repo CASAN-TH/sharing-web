@@ -5,10 +5,13 @@
     </div>
 
   </div>
-  <div class="col-6 pl-2">
-    <p *ngIf="data && data.data && data.data.detail">
+  <div class="col-6 pl-2 mt-2" *ngIf="data && data.data && data.data.detail">
+    <h2>
+      {{data.data.name}}
+    </h2>
+    <h4>
       {{data.data.detail}}
-    </p>
+    </h4>
     <button mat-raised-button color="primary" class="text-center">รับสินค้า</button>
 
   </div>
