@@ -20,10 +20,17 @@
 
 .search-position {
   position: absolute;
-  right: 300px;
+  right: 350px;
 
 }
 .margin {
-  border: solid 1px;
-    margin: 10px;
+    border: solid 1px;
+    margin: 20px;
+    color: transparent;
+}
+.cardsize {
+  vertical-align: middle;
+  width: 300x;
+  height: 300px;
+  
 }
