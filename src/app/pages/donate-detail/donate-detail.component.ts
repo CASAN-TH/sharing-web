@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DonateDetailService } from 'src/app/service/donate-detail.service';
 
+
 @Component({
   selector: 'app-donate-detail',
   templateUrl: './donate-detail.component.html',
@@ -9,21 +10,16 @@ import { DonateDetailService } from 'src/app/service/donate-detail.service';
 export class DonateDetailComponent implements OnInit {
 
   data: any;
+  imageArray: any;
 
   constructor(
     private donateDetailService: DonateDetailService,
   ) { }
 
   async ngOnInit() {
-    // this.getData();
-    // console.log(this.data)
     this.data = await this.donateDetailService.getDonateDetail();
-    console.log(this.data)
-  }
-
-  async getData(){
-    this.data = await this.donateDetailService.getDonateDetail();
-    console.log(this.data)
+    this.imageArray = this.data.data.images
+    console.log(this.imageArray)
   }
 
 }

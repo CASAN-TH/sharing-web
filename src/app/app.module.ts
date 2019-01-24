@@ -23,7 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import { NgMatSearchBarModule } from 'ng-mat-search-bar';
-
+import { SlideshowModule } from 'ng-simple-slideshow';
 
 
 const apiSrvCfg = environment;
@@ -50,6 +50,7 @@ const apiSrvCfg = environment;
     NgxSpinnerModule,
     MatIconModule,
     MatInputModule,
+    SlideshowModule,
     MatSelectModule,
     MatCardModule,
     MatButtonModule,
