@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { SlideshowModule } from 'ng-simple-slideshow';
 
 
 const apiSrvCfg = environment;
@@ -47,6 +48,7 @@ const apiSrvCfg = environment;
     NgxSpinnerModule,
     MatIconModule,
     MatInputModule,
+    SlideshowModule,
     MatSelectModule,
     AuthModule.forRoot(apiSrvCfg)
   ],
