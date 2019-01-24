@@ -6,8 +6,8 @@
 
   </div>
   <div class="col-6 pl-2">
-    <p>
-      Product donate Detail
+    <p *ngIf="data && data.data && data.data.detail">
+      {{data.data.detail}}
     </p>
     <button mat-raised-button color="primary" class="text-center">รับสินค้า</button>
 

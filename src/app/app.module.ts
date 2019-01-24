@@ -20,6 +20,7 @@ import { DonateDetailComponent } from './pages/donate-detail/donate-detail.compo
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
+
 const apiSrvCfg = environment;
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ const apiSrvCfg = environment;
     HttpClientModule,
     NgxSpinnerModule,
     MatIconModule,
+    HttpClientModule,
     AuthModule.forRoot(apiSrvCfg)
   ],
   exports: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DonateDetailService } from 'src/app/service/donate-detail.service';
 
 @Component({
   selector: 'app-donate-detail',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonateDetailComponent implements OnInit {
 
-  constructor() { }
+  data: any;
 
-  ngOnInit() {
+  constructor(
+    private donateDetailService: DonateDetailService,
+  ) { }
+
+  async ngOnInit() {
+    // this.getData();
+    // console.log(this.data)
+    this.data = await this.donateDetailService.getDonateDetail();
+    console.log(this.data)
+  }
+
+  async getData(){
+    this.data = await this.donateDetailService.getDonateDetail();
+    console.log(this.data)
   }
 
 }
