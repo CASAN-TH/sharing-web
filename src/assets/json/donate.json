@@ -42,6 +42,20 @@
                 "status" : "true",
                 "image" : {"url" : "http://img1.11thcdn.com/g/4/1/1/4/1/3/8/0/0/0/4114138_B.jpg"},
                 "donator" : "006"
+            },{
+                "_id" : "007",
+                "name" : "เสื้อเชิ้ตแขนสั้น",
+                "size" : "XL",
+                "status" : "true",
+                "image" : {"url" : "https://nylathailand.com/wp-content/uploads/2018/05/33-5.jpg"},
+                "donator" : "007"
+            },{
+                "_id" : "008",
+                "name" : "เสื้อแขนสั้น",
+                "size" : "L",
+                "status" : "true",
+                "image" : {"url" : "https://d126drxy0lew0u.cloudfront.net/catalog/product/large_image/09_415436.jpg"},
+                "donator" : "008"
             }
         
         ]

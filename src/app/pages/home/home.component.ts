@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from "@angular/core";
 
 import { DonateServiceService } from "src/app/services/donate-servic/donate-service.service";
@@ -8,7 +9,10 @@ import { DonateServiceService } from "src/app/services/donate-servic/donate-serv
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  constructor(private donateService: DonateServiceService) { }
+  constructor(
+    private donateService: DonateServiceService,
+    private router: Router
+    ) { }
 
   data: any = [];
 
@@ -19,5 +23,9 @@ export class HomeComponent implements OnInit {
   async getDonate() {
     this.data = await this.donateService.getDonate()
     console.log(this.data)
+  }
+
+  onCreateDonate() {
+    this.router.navigate(['/info-donate']);
   }
 }
