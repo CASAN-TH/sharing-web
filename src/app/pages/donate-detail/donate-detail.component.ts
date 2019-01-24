@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DonateDetailService } from 'src/app/service/donate-detail.service';
+import { DonateDetailService } from 'src/app/services/donate-detail/donate-detail.service';
 
 
 @Component({
