@@ -28,9 +28,14 @@
     margin: 20px;
     color: transparent;
 }
+.text {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
 .cardsize {
   vertical-align: middle;
   width: 300x;
-  height: 300px;
-  
+  height: 200px;
+ 
 }
