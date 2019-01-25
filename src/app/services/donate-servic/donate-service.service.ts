@@ -9,6 +9,6 @@ export class DonateServiceService {
   constructor(public http: HttpClient) { }
 
   getDonate() {
-    return this.http.get('../../../assets/json/donate.json').toPromise();
+    return this.http.get('http://localhost:3000/api/donates').toPromise();
   }
 }
