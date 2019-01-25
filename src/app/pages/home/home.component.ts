@@ -28,4 +28,9 @@ export class HomeComponent implements OnInit {
   onCreateDonate() {
     this.router.navigate(['/info-donate']);
   }
+
+  onDonateDetail(item) {
+    console.log(item)
+    this.router.navigate(['donate-detail'], {queryParams: {id : item._id}});
+  }
 }
