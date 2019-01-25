@@ -16,10 +16,7 @@ export class InfoDonateComponent implements OnInit {
     detail: '',
     image: [
       {
-        url: 'image1.png'
-      },
-      {
-        url: 'image2.png'
+        url: 'https://cf.shopee.co.th/file/36c21f881f8d827a585e612abae06871'
       }
     ]
   }
@@ -49,11 +46,12 @@ export class InfoDonateComponent implements OnInit {
   }
 
   getSize(i) {
-    console.log(i);
+    // console.log(i);
     this.data.size = i
   }
 
   async onSaveDonate() {
+    console.log('asd');
     let body = {
       name: this.data.name,
       size: this.data.size,
@@ -61,7 +59,7 @@ export class InfoDonateComponent implements OnInit {
       image: this.data.image,
       donator: 'pure'
     }
-    // console.log(body);
+    console.log(body);
     let res = await this.InfoDonateService.saveDonate(body);
     this.router.navigate(['/home']);
     console.log(res);

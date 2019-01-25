@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,14 @@ export class InfoDonateService {
     private http: HttpClient
   ) { }
 
+  private authorizationHeader() {
+    const token = window.localStorage.getItem('token@sharing-web-dev');
+    console.log(token);
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return headers;
+  }
+
   saveDonate(body) {
-    return this.http.post('http://localhost:3000/api/donates', body).toPromise();
+    return this.http.post(environment.apiUrl + '/api/donates', body, { headers: this.authorizationHeader() }).toPromise();
   }
 }
