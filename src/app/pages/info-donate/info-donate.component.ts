@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { InfoDonateService } from 'src/app/services/info-donate/info-donate.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info-donate',
@@ -39,7 +40,8 @@ export class InfoDonateComponent implements OnInit {
   ];
 
   constructor(
-    private InfoDonateService: InfoDonateService
+    private InfoDonateService: InfoDonateService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -65,7 +67,7 @@ export class InfoDonateComponent implements OnInit {
   }
 
   onCancel() {
-
+    this.router.navigate(['/home']);
   }
 
 }
