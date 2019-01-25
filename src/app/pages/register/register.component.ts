@@ -61,8 +61,7 @@ export class RegisterComponent implements OnInit {
       const res: any = await this.userAuth.register(this.register)
       console.log(res)
       if (res.token) {
-        console.log('save Token')
-        // console.log(this.register)
+        this.router.navigate(["/login"]);
         this.spinner.hide()
       }
     } catch (error) {
@@ -70,6 +69,10 @@ export class RegisterComponent implements OnInit {
       console.log('login Fail');
       this.spinner.hide()
     }
+  }
+
+  openLogin() {
+    this.router.navigate(["/login"]);
   }
 
 }

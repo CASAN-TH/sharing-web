@@ -22,7 +22,7 @@
                   <input type="password" matInput placeholder="Password" formControlName="password" required [(ngModel)]="register.password">
                 </mat-form-field>
                 <div>
-                  <button class="full-width mat-button" mat-button matStepperNext>Next</button>
+                  <button class="full-width" mat-raised-button color="primary" matStepperNext>Next</button>
                 </div>
               </form>
             </mat-step>
@@ -36,10 +36,10 @@
                   <input matInput placeholder="Last name" formControlName="lastname" required [(ngModel)]="register.lastname">
                 </mat-form-field>
                 <mat-form-field>
-                  <input type="email" matInput placeholder="Email" formControlName="email" required [(ngModel)]="register.email">
+                  <input type="email" matInput placeholder="Email (example@email.com)" formControlName="email" required [(ngModel)]="register.email">
                 </mat-form-field>
                 <div>
-                  <button class="full-width mat-button" mat-button matStepperNext>Next</button>
+                  <button class="full-width" mat-raised-button color="primary" matStepperNext>Next</button>
                 </div>
               </form>
             </mat-step>
@@ -55,14 +55,15 @@
                 </mat-form-field>
               </div>
               <div>
-                <button class="full-width mat-button" mat-button (click)="saveRegister()">Register</button>
+                
+                <button class="full-width" mat-raised-button color="primary" (click)="saveRegister()" [disabled]="!register.ref1">Register</button>
               </div>
             </mat-step>
           </mat-vertical-stepper>
 
         </mat-card-content>
         <mat-card-actions>
-
+            <button class="full-width" mat-stroked-button (click)="openLogin()">เข้าสู่ระบบ</button>
         </mat-card-actions>
       </mat-card>
 
