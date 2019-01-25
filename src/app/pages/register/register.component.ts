@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { AuthService } from "ng6-md-auth";
 import { NgxSpinnerService } from "ngx-spinner";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from "@angular/material";
 
 @Component({
   selector: "app-register",
@@ -27,7 +28,8 @@ export class RegisterComponent implements OnInit {
     private userAuth: AuthService,
     private router: Router,
     private spinner: NgxSpinnerService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private snackBar: MatSnackBar
   ) {
     this.userAuth.isLoggingIn.subscribe(() => {
       this.spinner.show();
@@ -61,12 +63,17 @@ export class RegisterComponent implements OnInit {
       const res: any = await this.userAuth.register(this.register)
       console.log(res)
       if (res.token) {
+        this.snackBar.open('สมัครสมาชิกสำเร็จ', '', {
+          duration: 3000,
+        });
         this.router.navigate(["/login"]);
         this.spinner.hide()
       }
     } catch (error) {
+      this.snackBar.open('ข้อมูลผิดพลาด', 'โปรดกรอกข้อมูลใหม่', {
+        duration: 3000,
+      });
       console.log(error);
-      console.log('login Fail');
       this.spinner.hide()
     }
   }
