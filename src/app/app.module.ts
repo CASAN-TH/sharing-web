@@ -21,9 +21,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import { SlideshowModule } from 'ng-simple-slideshow';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 const apiSrvCfg = environment;
@@ -54,6 +55,7 @@ const apiSrvCfg = environment;
     MatSelectModule,
     MatCardModule,
     MatButtonModule,
+    MatStepperModule,
     NgMatSearchBarModule,
     AuthModule.forRoot(apiSrvCfg)
   ],
