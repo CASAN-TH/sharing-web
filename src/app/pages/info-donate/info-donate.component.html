@@ -26,18 +26,18 @@
 
 <div class="row pt-3 pl-3">
   <div class="col-3 col-md-2">
-    <p style="margin-top: 16px">ชื่อ</p>
+    <p style="margin-top: 16px">ชื่อ <span class="red-color">*</span></p>
   </div>
   <div class="col-6">
     <mat-form-field class="full-width">
-      <input matInput [(ngModel)]="data.name">
+      <input class="height-input" matInput [(ngModel)]="data.name" placeholder="เพิ่มชื่อสิ่งทีของต้องการบริจาค">
     </mat-form-field>
   </div>
 </div>
 
 <div class="row pt-3 pl-3">
   <div class="col-3 col-md-2">
-    <p style="margin-top: 16px">ขนาด</p>
+    <p style="margin-top: 16px">ขนาด <span class="red-color">*</span></p>
   </div>
   <div class="col-6">
     <mat-form-field>
@@ -52,7 +52,7 @@
 
 <div class="row pt-3 pl-3">
   <div class="col-3 col-md-2">
-    <p style="margin-top: 16px">รายละเอียด</p>
+    <p style="margin-top: 16px">รายละเอียด <span class="red-color">*</span></p>
   </div>
   <div class="col-6">
     <mat-form-field class="full-width">

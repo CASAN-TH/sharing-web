@@ -63,6 +63,7 @@ export class InfoDonateComponent implements OnInit {
     }
     // console.log(body);
     let res = await this.InfoDonateService.saveDonate(body);
+    this.router.navigate(['/home']);
     console.log(res);
   }
 
