@@ -25,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
 import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 const apiSrvCfg = environment;
@@ -57,6 +58,7 @@ const apiSrvCfg = environment;
     MatButtonModule,
     MatStepperModule,
     NgMatSearchBarModule,
+    MatSnackBarModule,
     AuthModule.forRoot(apiSrvCfg)
   ],
   exports: [
