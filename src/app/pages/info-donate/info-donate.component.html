@@ -64,7 +64,7 @@
 <div class="row">
   <div class="col-4"></div>
   <div class="col-12 col-md-2 mt-3">
-    <button mat-flat-button (click)="onSaveDonate()" class="full-width" color="primary">บันทึก</button>
+    <button mat-flat-button (click)="onSaveDonate()" class="full-width" color="primary" [disabled]="!data.name || !data.size || !data.detail">บันทึก</button>
   </div>
   <div class="col-12 col-md-2 mt-3">
     <button mat-stroked-button class="full-width" (click)="onCancel()">ยกเลิก</button>
