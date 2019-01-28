@@ -1,32 +1,32 @@
-<div class="content">
-    <div class="row, row mt-4">
-        <div class="col-6 ">
-            <mat-search-bar class="search-position">
+<div name="divContent" class="content">
+    <div name="divRowMt4" class="row, row mt-4">
+        <div name="divCol61" class="col-6 ">
+            <mat-search-bar name="matSearchBar" class="search-position">
 
             </mat-search-bar>
         </div>
-        <div class="col-6  text-right ">
+        <div name="divCol62" class="col-6  text-right ">
 
-            <div class="example-button-row">
-                    <button mat-flat-button color="primary" (click)="onCreateDonate()">บริจาค</button>
+            <div name="divBtnonCreateDonate" class="example-button-row">
+                <button name="btnOnCreateDonate" mat-flat-button color="primary" (click)="onCreateDonate()">บริจาค</button>
             </div>
 
         </div>
 
-        <div class="row mt-2" *ngIf="data">
+        <div name="divNgifRowMt2" class="row mt-2" *ngIf="data">
 
-            <div class="col-sm-12 col-md-4 col-lg-3" *ngFor="let item of data.data">
-                <div class="margin">
-                    <mat-card class="example-card" (click)="onDonateDetail(item)">
+            <div name="divColsm12Md4Lg3Ngfor" class="col-sm-12 col-md-4 col-lg-3" *ngFor="let item of data.data">
+                <div name="divMargin" class="margin">
+                    <mat-card name="matCardClickonCreateDonate" class="example-card" (click)="onDonateDetail(item)">
 
-                        <img mat-card-image class="cardsize" [src]="item.image[0].url">
-                        <mat-card-content>
+                        <img name="imageCardShirt" mat-card-image class="cardsize" [src]="item.image[0].url">
+                        <mat-card-content name="matCardContentNameAndSize">
 
-                            <h5 class="text">
+                            <h5 name="h5NameShirt" class="text">
                                 {{item.name}}
                             </h5>
 
-                            <h5 class="text-right">
+                            <h5 name="h5SizeShirt" class="text-right">
                                 {{item.size}}
                             </h5>
 
