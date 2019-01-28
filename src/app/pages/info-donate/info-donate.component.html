@@ -5,17 +5,29 @@
 </div>
 
 <div name="divRowUploadImg" class="row pt-3 pl-3">
-  <div name="divColUploadImg" class="col-12 col-md-3 center">
-    <div name="divBtnUploadImg" class="border-upload-img center full-width">
+  <div name="divColUploadImg" class="col-12 col-md-3 center" (click)="uploadImg()" *ngIf="images.length < 4">
+    <div name="
+    divBtnUploadImg" class="border-upload-img center full-width">
       <!-- <mat-icon style="font-size: 220%">add</mat-icon> -->
       <button name="btnUploadImg" mat-fab color="primary">
         <mat-icon name="iconUploadImg">add</mat-icon>
       </button>
     </div>
   </div>
-  <div name="divColBlank1" class="col-3"></div>
-  <div name="divColBlank2" class="col-3"></div>
-  <div name="divColBlank3" class="col-3"></div>
+
+  <div name="divcolImgProd" class="col-3" *ngFor="let item of images;let i = index">
+    <div class="contrain">
+      <div class="tools">
+        <div name="buttonDeleteImage" class="remove" (click)="deleteImg(i)">
+          <mat-icon>delete</mat-icon>
+        </div>
+      </div>
+      <img [src]="item.url" alt="image" class="product-img">
+    </div>
+  </div>
+
+  <input name="productImage" type="file" #productImg accept="image/*" [(ngModel)]="productImgModel" (change)="onProductImgChange($event)"
+    style="visibility: hidden;">
 </div>
 
 <div name="divRowAllDetail" class="row pt-3">
