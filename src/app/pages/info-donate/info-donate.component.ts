@@ -3,6 +3,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { InfoDonateService } from 'src/app/services/info-donate/info-donate.service';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
+import { ModalConfirmComponent } from 'src/app/modals/modal-confirm/modal-confirm.component';
+import { MatDialog } from '@angular/material';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-info-donate',
@@ -41,7 +44,9 @@ export class InfoDonateComponent implements OnInit {
 
   constructor(
     private InfoDonateService: InfoDonateService,
-    private router: Router
+    private router: Router,
+    private spinner: NgxSpinnerService,
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit() {
@@ -103,8 +108,31 @@ export class InfoDonateComponent implements OnInit {
     });
   }
 
-  deleteImg(i) {
-    console.log(i);
+  deleteImg(index) {
+    const dialogRef = this.dialog.open(ModalConfirmComponent, {
+      width: '500px',
+      data: { message: 'คุณต้องการลบรูปหรือไม่?' }
+    });
+
+    dialogRef.afterClosed().subscribe(async result => {
+      const res = result;
+      if (res === 'confirm') {
+        this.spinner.show();
+        try {
+          this.images.splice(index, 1);
+          console.log(this.images);
+          this.spinner.hide();
+        } catch (error) {
+          this.spinner.hide();
+        }
+      }
+    });
+
+
+    // const conf = window.confirm('ยืนยันการลบรูปสินค้า');
+    // if (conf) {
+    //   this.images.splice(index, 1);
+    // }
   }
 
 
