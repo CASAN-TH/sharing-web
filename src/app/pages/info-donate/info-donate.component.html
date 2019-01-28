@@ -1,48 +1,48 @@
-<div class="row pt-3">
-  <div class="col">
-    <h5>รูปสิ่งที่แบ่งปัน</h5>
+<div name="divRowHeader" class="row pt-3">
+  <div name="divColHeader" class="col">
+    <h5 name="h5Header">รูปสิ่งที่แบ่งปัน</h5>
   </div>
 </div>
 
-<div class="row pt-3 pl-3">
-  <div class="col-12 col-md-3 center">
-    <div class="border-upload-img center full-width">
+<div name="divRowUploadImg" class="row pt-3 pl-3">
+  <div name="divColUploadImg" class="col-12 col-md-3 center">
+    <div name="divBtnUploadImg" class="border-upload-img center full-width">
       <!-- <mat-icon style="font-size: 220%">add</mat-icon> -->
-      <button mat-fab color="primary">
-        <mat-icon>add</mat-icon>
+      <button name="btnUploadImg" mat-fab color="primary">
+        <mat-icon name="iconUploadImg">add</mat-icon>
       </button>
     </div>
   </div>
-  <div class="col-3"></div>
-  <div class="col-3"></div>
-  <div class="col-3"></div>
+  <div name="divColBlank1" class="col-3"></div>
+  <div name="divColBlank2" class="col-3"></div>
+  <div name="divColBlank3" class="col-3"></div>
 </div>
 
-<div class="row pt-3">
-  <div class="col">
-    <h5>รายละเอียดรูปสิ่งที่แบ่งปัน</h5>
+<div name="divRowAllDetail" class="row pt-3">
+  <div name="divColAllDetail" class="col">
+    <h5 name="h5AllDetail">รายละเอียดสิ่งที่แบ่งปัน</h5>
   </div>
 </div>
 
-<div class="row pt-3 pl-3">
-  <div class="col-3 col-md-2">
-    <p style="margin-top: 16px">ชื่อ <span class="red-color">*</span></p>
+<div name="divRowName" class="row pt-3 pl-3">
+  <div name="divColTextName" class="col-3 col-md-2">
+    <p name="pName" style="margin-top: 16px">ชื่อ <span class="red-color">*</span></p>
   </div>
-  <div class="col-6">
-    <mat-form-field class="full-width">
-      <input class="height-input" matInput [(ngModel)]="data.name" placeholder="เพิ่มชื่อสิ่งทีของต้องการบริจาค">
+  <div name="divColInputName" class="col-6">
+    <mat-form-field name="mffInputName" class="full-width">
+      <input name="inputName" class="height-input" matInput [(ngModel)]="data.name" placeholder="เพิ่มชื่อสิ่งทีของต้องการบริจาค">
     </mat-form-field>
   </div>
 </div>
 
-<div class="row pt-3 pl-3">
-  <div class="col-3 col-md-2">
-    <p style="margin-top: 16px">ขนาด <span class="red-color">*</span></p>
+<div name="divRowSize" class="row pt-3 pl-3">
+  <div name="divColTextSize" class="col-3 col-md-2">
+    <p name="pSize" style="margin-top: 16px">ขนาด <span class="red-color">*</span></p>
   </div>
-  <div class="col-6">
-    <mat-form-field>
-      <mat-select>
-        <mat-option *ngFor="let item of size" [value]="item.value" (click)="getSize(item.value)">
+  <div name="divColInputSize" class="col-6">
+    <mat-form-field name="mffSize">
+      <mat-select name="selectSize">
+        <mat-option name="optionSize" *ngFor="let item of size" [value]="item.value" (click)="getSize(item.value)">
           {{item.value}}
         </mat-option>
       </mat-select>
@@ -50,24 +50,24 @@
   </div>
 </div>
 
-<div class="row pt-3 pl-3">
-  <div class="col-3 col-md-2">
-    <p style="margin-top: 16px">รายละเอียด <span class="red-color">*</span></p>
+<div name="divRowDetail" class="row pt-3 pl-3">
+  <div name="divColTextDetail" class="col-3 col-md-2">
+    <p name="pDetail" style="margin-top: 16px">รายละเอียด <span class="red-color">*</span></p>
   </div>
-  <div class="col-6">
-    <mat-form-field class="full-width">
-      <textarea [(ngModel)]="data.detail" matInput placeholder="เพิ่มรายละเอียดการบริจาค, สถานที่นัดรับ"></textarea>
+  <div name="divColInputDetail" class="col-6">
+    <mat-form-field name="mffInputDetail" class="full-width">
+      <textarea name="inputDetail" name="inputDetail" [(ngModel)]="data.detail" matInput placeholder="เพิ่มรายละเอียดการบริจาค, สถานที่นัดรับ"></textarea>
     </mat-form-field>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-4"></div>
-  <div class="col-12 col-md-2 mt-3">
-    <button mat-flat-button (click)="onSaveDonate()" class="full-width" color="primary" [disabled]="!data.name || !data.size || !data.detail">บันทึก</button>
+<div name="divRowBtn" class="row">
+  <div name="divColBlank4" class="col-4"></div>
+  <div name="divColBtnSave" class="col-12 col-md-2 mt-3">
+    <button name="btnSave" mat-flat-button (click)="onSaveDonate()" class="full-width" color="primary" [disabled]="!data.name || !data.size || !data.detail">บันทึก</button>
   </div>
-  <div class="col-12 col-md-2 mt-3">
-    <button mat-stroked-button class="full-width" (click)="onCancel()">ยกเลิก</button>
+  <div name="divColBtnCancel" class="col-12 col-md-2 mt-3">
+    <button name="btnCancel" mat-stroked-button class="full-width" (click)="onCancel()">ยกเลิก</button>
   </div>
-  <div class="col-4"></div>
+  <div name="divColBlank5" class="col-4"></div>
 </div>
