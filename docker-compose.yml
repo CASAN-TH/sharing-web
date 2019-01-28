@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: cyberadvance/sharing-web
+    ports: 
+      - "80:80"
+    deploy:
+      replicas: 1
+
+  

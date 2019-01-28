@@ -26,6 +26,8 @@ import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ModalConfirmComponent } from './modals/modal-confirm/modal-confirm.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 const apiSrvCfg = environment;
@@ -38,7 +40,8 @@ const apiSrvCfg = environment;
     ForgotComponent,
     HeaderToolbarComponent,
     InfoDonateComponent,
-    DonateDetailComponent
+    DonateDetailComponent,
+    ModalConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,11 @@ const apiSrvCfg = environment;
     MatStepperModule,
     NgMatSearchBarModule,
     MatSnackBarModule,
+    MatDialogModule,
     AuthModule.forRoot(apiSrvCfg)
+  ],
+  entryComponents: [
+    ModalConfirmComponent
   ],
   exports: [
     MatIconModule

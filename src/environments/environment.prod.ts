@@ -2,5 +2,5 @@ export const environment = {
   production: false,
   environment: "dev",
   appName: "sharing-web",
-  apiUrl: "https://apis.sharing-web.com"
+  apiUrl: "http://52.74.2.135"
 };
