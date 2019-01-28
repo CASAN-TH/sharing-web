@@ -1,69 +1,69 @@
-<div class="content">
-  <div class="row mt-5">
-    <div class="col-md-7 col-sm-12">
-      <img class="cover" src="http://comunytek.com/wp-content/uploads/2017/03/Microservices.png" alt="">
+<div name="divRegisterContent" class="content">
+  <div name="divRegisterRow" class="row mt-5">
+    <div name="divRegisterColImg" class="col-md-7 col-sm-12">
+      <img name="imgRegisterLogo" class="cover" src="http://comunytek.com/wp-content/uploads/2017/03/Microservices.png" alt="">
     </div>
 
-    <div class="col-md-5 col-sm-12">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>สมัครสมาชิก</mat-card-title>
+    <div name="divRegisterColCard" class="col-md-5 col-sm-12">
+      <mat-card name="matCardRegister">
+        <mat-card-header name="matCardHeaderRegister">
+          <mat-card-title name="matCardTitleRegister">สมัครสมาชิก</mat-card-title>
         </mat-card-header>
-        <mat-card-content>
+        <mat-card-content name="matCardContentRegister">
 
-          <mat-vertical-stepper linear="true" #stepper>
-            <mat-step [stepControl]="firstFormGroup">
-              <form [formGroup]="firstFormGroup">
-                <ng-template matStepLabel>ข้อมูลสมาชิก</ng-template>
-                <mat-form-field>
-                  <input matInput placeholder="Username" formControlName="Username" required [(ngModel)]="register.username">
+          <mat-vertical-stepper name="matVerticalStepperRegister" linear="true" #stepper>
+            <mat-step name="matStepFirstRegister" [stepControl]="firstFormGroup">
+              <form name="formFirstRegister" [formGroup]="firstFormGroup">
+                <ng-template name="templateRegister" matStepLabel>ข้อมูลสมาชิก</ng-template>
+                <mat-form-field name="matFormFieldUsername">
+                  <input name="inputUsername" matInput placeholder="Username" formControlName="Username" required [(ngModel)]="register.username">
                 </mat-form-field>
-                <mat-form-field>
-                  <input type="password" matInput placeholder="Password" formControlName="password" required [(ngModel)]="register.password">
+                <mat-form-field name="matFormFieldPasword">
+                  <input name="inputPassword" type="password" matInput placeholder="Password" formControlName="password" required [(ngModel)]="register.password">
                 </mat-form-field>
-                <div>
-                  <button class="full-width" mat-raised-button color="primary" matStepperNext>Next</button>
+                <div name="divBtnNext1Register">
+                  <button name="btnNext1" class="full-width" mat-raised-button color="primary" matStepperNext>Next</button>
                 </div>
               </form>
             </mat-step>
-            <mat-step [stepControl]="secondFormGroup">
-              <form [formGroup]="secondFormGroup">
-                <ng-template matStepLabel>ข้อมูลส่วนตัว</ng-template>
-                <mat-form-field>
-                  <input matInput placeholder="First name" formControlName="firstname" required [(ngModel)]="register.firstname">
+            <mat-step name="matStepSecondRegister" [stepControl]="secondFormGroup">
+              <form name="formSecondRegister" [formGroup]="secondFormGroup">
+                <ng-template name="templateRegister2" matStepLabel>ข้อมูลส่วนตัว</ng-template>
+                <mat-form-field name="matFormFieldFirstName">
+                  <input name="inputFirstName" matInput placeholder="First name" formControlName="firstname" required [(ngModel)]="register.firstname">
                 </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Last name" formControlName="lastname" required [(ngModel)]="register.lastname">
+                <mat-form-field name="matFormFieldLastName">
+                  <input name="inputLastName" matInput placeholder="Last name" formControlName="lastname" required [(ngModel)]="register.lastname">
                 </mat-form-field>
-                <mat-form-field>
-                  <input type="email" matInput placeholder="Email (example@email.com)" formControlName="email" required [(ngModel)]="register.email">
+                <mat-form-field name="matFormFieldEmail">
+                  <input name="inputEmail" type="email" matInput placeholder="Email (example@email.com)" formControlName="email" required [(ngModel)]="register.email">
                 </mat-form-field>
-                <div>
-                  <button class="full-width" mat-raised-button color="primary" matStepperNext>Next</button>
+                <div name="divBtnNext2Register">
+                  <button name="btnNext2" class="full-width" mat-raised-button color="primary" matStepperNext>Next</button>
                 </div>
               </form>
             </mat-step>
-            <mat-step>
-              <ng-template matStepLabel>ข้อมูลทั่วไป</ng-template>
-              <div>
-                <mat-form-field>
-                  <mat-select placeholder="ขนาดเสื้อ" [(value)]="register.ref1">
-                    <mat-option value="S">S</mat-option>
-                    <mat-option value="M">M</mat-option>
-                    <mat-option value="L">L</mat-option>
+            <mat-step name="matStepFinishRegister">
+              <ng-template name="templateFinishRegister" matStepLabel>ข้อมูลทั่วไป</ng-template>
+              <div name="divFinishRegister">
+                <mat-form-field name="matFormFieldSizeRegister">
+                  <mat-select name="matSelectSizeRegister" placeholder="ขนาดเสื้อ" [(value)]="register.ref1">
+                    <mat-option name="matOptionS" value="S">S</mat-option>
+                    <mat-option name="matOptionM" value="M">M</mat-option>
+                    <mat-option name="matOptionL" value="L">L</mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
-              <div>
+              <div name="divBtnFinishRegister">
                 
-                <button class="full-width" mat-raised-button color="primary" (click)="saveRegister()" [disabled]="!register.ref1">Register</button>
+                <button name="btnFinishRegister" class="full-width" mat-raised-button color="primary" (click)="saveRegister()" [disabled]="!register.ref1">Register</button>
               </div>
             </mat-step>
           </mat-vertical-stepper>
 
         </mat-card-content>
-        <mat-card-actions>
-            <button class="full-width" mat-stroked-button (click)="openLogin()">เข้าสู่ระบบ</button>
+        <mat-card-actions name="matCardActionRegister">
+            <button name="btnOpenLogin" class="full-width" mat-stroked-button (click)="openLogin()">เข้าสู่ระบบ</button>
         </mat-card-actions>
       </mat-card>
 
