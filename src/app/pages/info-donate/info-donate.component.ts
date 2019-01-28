@@ -97,13 +97,14 @@ export class InfoDonateComponent implements OnInit {
     const storageRef = firebase.storage().ref();
     const fileRandom = Math.floor((Date.now() / 1000) + new Date().getUTCMilliseconds());
     const uploadTask: any = storageRef.child(`images/uploads/${fileRandom}.jpg`);
-
+    this.spinner.show();
     uploadTask.putString(base64, firebase.storage.StringFormat.DATA_URL).then((snapshot) => {
       uploadTask.getDownloadURL().then(url => {
         this.images.push({
           url: url
         });
         console.log(this.images);
+        this.spinner.hide();
       });
     });
   }
@@ -127,12 +128,6 @@ export class InfoDonateComponent implements OnInit {
         }
       }
     });
-
-
-    // const conf = window.confirm('ยืนยันการลบรูปสินค้า');
-    // if (conf) {
-    //   this.images.splice(index, 1);
-    // }
   }
 
 
