@@ -38,7 +38,7 @@ export class DonateDetailComponent implements OnInit {
     }
     this.data = await this.donateDetailService.getDetail(idProd);
     this.imageArray = this.data.data.image
-    console.log(this.data.data.status)
+    console.log(this.data)
     // console.log(this.imageArray)
   }
 
