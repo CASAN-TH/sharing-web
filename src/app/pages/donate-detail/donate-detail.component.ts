@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DonateDetailService } from 'src/app/services/donate-detail/donate-detail.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -18,6 +18,7 @@ export class DonateDetailComponent implements OnInit {
   constructor(
     private donateDetailService: DonateDetailService,
     private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) { }
 
   async ngOnInit() {
@@ -28,8 +29,8 @@ export class DonateDetailComponent implements OnInit {
         if (params['id'] && params['user_id']) {
           this.itemId = params['id'];
           this.userId = params['user_id']
-          console.log(this.itemId);
-          console.log(this.userId);
+          // console.log(this.itemId);
+          // console.log(this.userId);
         }
       });
     let idProd = {
@@ -37,8 +38,8 @@ export class DonateDetailComponent implements OnInit {
     }
     this.data = await this.donateDetailService.getDetail(idProd);
     this.imageArray = this.data.data.image
-    console.log(this.data)
-    console.log(this.imageArray)
+    console.log(this.data.data.status)
+    // console.log(this.imageArray)
   }
 
   async onAcceptDonate() {
@@ -48,6 +49,7 @@ export class DonateDetailComponent implements OnInit {
     }
     const res: any = await this.donateDetailService.updateStatus(body);
     console.log(res);
+    this.router.navigate(['home'])
   }
 
 }
