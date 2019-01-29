@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row class="container">
-    <span>{{appName}}</span>
+    <span (click)="onClickToHome()" style="cursor: pointer;">{{appName}}</span>
     <span class="example-spacer"></span>
     <span *ngIf="userAuth">
       <mat-icon class="example-icon">notifications</mat-icon>
