@@ -22,7 +22,8 @@ export class DonateDetailService {
     return this.http.post(environment.apiUrl + '/api/donate-detail', id, { headers: this.authorizationHeader() }).toPromise();
   }
 
-  getDonateDetail(){
-    return this.http.get('../../assets/json/donate-detail.json').toPromise();
+  updateStatus(body){
+    return this.http.post(environment.apiUrl + '/api/accept-donate', body, { headers: this.authorizationHeader() }).toPromise();
   }
+
 }

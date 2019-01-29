@@ -40,6 +40,6 @@ export class HomeComponent implements OnInit {
 
   onDonateDetail(item) {
     console.log(item)
-    this.router.navigate(['donate-detail'], { queryParams: { id: item._id } });
+    this.router.navigate(['donate-detail'], { queryParams: { id: item._id, user_id: this.user.data._id } });
   }
 }
