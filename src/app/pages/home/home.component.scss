@@ -25,7 +25,9 @@
 }
 .margin {
     border: solid 1px;
-    margin: 20px;
+    // margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     color: transparent;
     
 }
@@ -42,10 +44,4 @@
 
 .pointer {
   cursor: pointer;
-}
-
-.btnposition {
-  position: center;
-  
-
 }

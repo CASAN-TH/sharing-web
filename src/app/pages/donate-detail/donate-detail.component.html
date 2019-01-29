@@ -1,30 +1,17 @@
-<div name="divDonateDetailRow" class="row, row mt-5">
-  <div name="divDonateDetailCol6" class="col-6 ">
+<div name="divDonateDetailRow" class="row">
+  <div name="divDonateDetailCol6" class="col-6 mt-3">
     <div name="divDonateDetailImage" style="height: 300px; object-fit: cover">
-      <slideshow name="slideShowDonateDetailImage" [imageUrls]="imageArray"></slideshow>
+      <slideshow name="slideShowDonateDetailImage" [imageUrls]="imageArray" ></slideshow>
     </div>
   </div>
+  <div name="divDonateDetailData" class="col-6 pl-2 mt-2" *ngIf="data && data.data && data.data.detail">
+    <h2 name="h2DonateDetailName">
+      {{data.data.name}}
+    </h2>
+    <h4 name="h4DonateDetailDetail">
+      {{data.data.detail}}
+    </h4>
+    <button name="btnDonateDetailAccept" mat-raised-button color="primary" class="text-center">รับสินค้า</button>
 
-
-  <div name="divDonateDetailData" class="col-sm-12 col-md-6  col-lg-6  pl-2 mt-2" *ngIf="data && data.data && data.data.detail">
-
-    <mat-card class="example-card" class="cardsize">
-
-      <mat-card-content>
-        <h2 name="h2DonateDetailName">
-          {{data.data.name}}
-        </h2>
-        <h4 name="h4DonateDetailSize">
-          ขนาด : {{data.data.size}}
-        </h4>
-        <h4 name="h4DonateDetailDetail">
-          {{data.data.detail}}
-        </h4>
-      </mat-card-content>
-      <mat-card-actions >
-        <button name="btnDonateDetailAccept" mat-raised-button color="primary" class="text-center">รับสินค้า</button>
-      </mat-card-actions>
-    </mat-card>
   </div>
-
 </div>
