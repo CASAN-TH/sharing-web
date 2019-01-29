@@ -19,7 +19,10 @@
                 <div name="divMargin" class="margin">
                     <mat-card name="matCardClickOnDonateDetail" class="example-card" (click)="onDonateDetail(item)">
 
-                        <img name="imageCardShirt" mat-card-image class="cardsize" [src]="item.image[0].url">
+                        <img *ngIf="item && item.image.length > 0" name="imageCardShirt" mat-card-image class="cardsize"
+                            [src]="item.image[0].url">
+                        <img *ngIf="item && item.image.length < 1" name="imageCardShirt" mat-card-image class="cardsize"
+                            src="../../../assets/images/noimg.png">
                         <mat-card-content name="matCardContentNameAndSize">
 
                             <h5 name="h5NameShirt" class="text">
