@@ -12,7 +12,7 @@ export class DonateDetailComponent implements OnInit {
 
   data: any;
   imageArray: any;
-  itemId:any;
+  itemId: any;
 
   constructor(
     private donateDetailService: DonateDetailService,
@@ -23,15 +23,17 @@ export class DonateDetailComponent implements OnInit {
 
     this.activatedRoute
       .queryParams
-      .subscribe(params =>{
-        if (params['id']){
+      .subscribe(params => {
+        if (params['id']) {
           this.itemId = params['id'];
           console.log(this.itemId);
         }
-        });
-    
-    this.data = await this.donateDetailService.getDonateDetail();
-    this.imageArray = this.data.data.images
+      });
+    let idProd = {
+      id: this.itemId
+    }
+    this.data = await this.donateDetailService.getDetail(idProd);
+    this.imageArray = this.data.data.image
     console.log(this.data)
     console.log(this.imageArray)
   }
