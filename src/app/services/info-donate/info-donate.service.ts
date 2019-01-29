@@ -13,7 +13,7 @@ export class InfoDonateService {
 
   private authorizationHeader() {
     const token = window.localStorage.getItem('token@sharing-web-dev');
-    console.log(token);
+    // console.log(token);
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return headers;
   }

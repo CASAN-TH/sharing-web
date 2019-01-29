@@ -27,6 +27,7 @@
     border: solid 1px;
     margin: 20px;
     color: transparent;
+    
 }
 .text {
   white-space: nowrap; 
@@ -35,7 +36,16 @@
 }
 .cardsize {
   vertical-align: middle;
-  width: 300x;
-  height: 200px;
- 
+  width: 350x;
+  height: 225px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.btnposition {
+  position: center;
+  
+
 }
