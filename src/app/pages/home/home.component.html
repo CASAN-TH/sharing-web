@@ -1,9 +1,12 @@
 <div name="divContent" class="content">
     <div name="divRowMt4" class="row, row mt-4">
         <div name="divCol61" class="col-6 ">
-            <mat-search-bar name="matSearchBar" class="search-position">
-
-            </mat-search-bar>
+            <mat-form-field class="example-form-field">
+                <input matInput type="text" placeholder="ค้นหา" [(ngModel)]="value">
+                <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
         </div>
         <div name="divCol62" class="col-6  text-right ">
 
@@ -15,9 +18,9 @@
 
         <div name="divNgifRowMt2" class="row mt-2" *ngIf="data">
 
-            <div name="divColsm12Md4Lg3Ngfor" class="col-sm-12 col-md-4 col-lg-3" *ngFor="let item of data.data">
+            <div name="divColsm12Md4Lg3Ngfor" class="col-sm-6 col-md-4 col-lg-3 " *ngFor="let item of data.data">
                 <div name="divMargin" class="margin">
-                    <mat-card name="matCardClickOnDonateDetail" class="example-card" (click)="onDonateDetail(item)">
+                    <mat-card name="matCardClickOnDonateDetail" class="example-card" class="pointer" (click)="onDonateDetail(item)">
 
                         <img *ngIf="item && item.image.length > 0" name="imageCardShirt" mat-card-image class="cardsize"
                             [src]="item.image[0].url">
@@ -25,13 +28,13 @@
                             src="../../../assets/images/noimg.png">
                         <mat-card-content name="matCardContentNameAndSize">
 
-                            <h5 name="h5NameShirt" class="text">
+                            <h6 name="h5NameShirt" class="text">
                                 {{item.name}}
-                            </h5>
+                            </h6>
 
-                            <h5 name="h5SizeShirt" class="text-right">
-                                {{item.size}}
-                            </h5>
+                            <p name="h5SizeShirt" >
+                                ขนาด :  {{item.size}}
+                            </p>
 
                         </mat-card-content>
 
