@@ -41,13 +41,13 @@ export class DonateDetailComponent implements OnInit {
     console.log(this.imageArray)
   }
 
-  // async onAcceptDonate() {
-  //   let body = {
-  //     product_id: this.itemId,
-  //     user_id: this.userId
-  //   }
-  //   const res: any = await this.donateDetailService.updateStatus(body);
-  //   console.log(res);
-  // }
+  async onAcceptDonate() {
+    let body = {
+      product_id: this.itemId,
+      user_id: this.userId
+    }
+    const res: any = await this.donateDetailService.updateStatus(body);
+    console.log(res);
+  }
 
 }
