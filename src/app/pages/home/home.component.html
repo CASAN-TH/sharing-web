@@ -20,9 +20,9 @@
     </div>
     <div name="divNgifRowMt2" class="row" *ngIf="data">
         <div class="col-sm-6 col-md-4" *ngFor="let item of data.data" (click)="onModalDetail(item)">
-            <img *ngIf="item && item.image.length > 0" name="imageCardShirt" class="img-style border-image " style="border-radius: 2%"
+            <img *ngIf="item && item.image.length > 0" name="imageCardShirt" class="img-style border-image pointer " style="border-radius: 2%"
                 [src]="item.image[0].url">
-            <img *ngIf="item && item.image.length < 1" name="imageCardShirt" class="img-style border-image " src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548731775/web-sharing/no-image.png">
+            <img *ngIf="item && item.image.length < 1" name="imageCardShirt" class="img-style border-image pointer " src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548731775/web-sharing/no-image.png">
             <div class="text-overflow text-image" style="padding-top: 5px;padding-bottom: 5px">
                 <div style="padding-left: 10px;padding-bottom: 10px">
                     <p style="margin-bottom: 0px" class="font-prod">{{item.name}}</p>
