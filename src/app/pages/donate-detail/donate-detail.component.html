@@ -1,17 +1,23 @@
-<div name="divDonateDetailRow" class="row">
-  <div name="divDonateDetailCol6" class="col-6 mt-3">
-    <div name="divDonateDetailImage" style="height: 500px; object-fit: cover">
+<div name="divDonateDetailRow" class="row container m-0 pt-3 pb-5">
+  <div name="divDonateDetailCol6" class="col-12 col-sm-12 col-md-12 col-lg-6 mt-3">
+    <div name="divDonateDetailImage" class="image-container" *ngIf="imageArray && imageArray.length > 1">
       <slideshow name="slideShowDonateDetailImage" [imageUrls]="imageArray" ></slideshow>
     </div>
+    <div name="divDonateDetailImageSingle" class="image-container" *ngIf="imageArray && imageArray.length === 1">
+      <img name="donateDetailImageSingle" *ngFor="let item of imageArray" [src]="item.url" class="image-size">
+    </div>
+    <div name="divDonateDetailNoImage" class="image-container" *ngIf="imageArray && imageArray.length === 0">
+      <img name="donateDetailNoImage" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548731775/web-sharing/no-image.png" class="image-size">
+    </div>
   </div>
-  <div name="divDonateDetailData" class="col-6 pl-2 mt-2" *ngIf="data && data.data && data.data.detail">
+  <div name="divDonateDetailData" class="col-12 col-sm-12 col-md-12 col-lg-6 mt-3" *ngIf="data && data.data && data.data.detail">
     <h2 name="h2DonateDetailName">
       {{data.data.name}}
     </h2>
     <h4 name="h4DonateDetailDetail">
       {{data.data.detail}}
     </h4>
-    <button name="btnDonateDetailAccept" mat-raised-button color="primary" class="text-center" (click)="onAcceptDonate()" [disabled]="data.data.status === false">รับสินค้า</button>
+    <button name="btnDonateDetailAccept" mat-raised-button color="primary" class="text-center btn-size" (click)="onAcceptDonate()" [disabled]="data.data.status === false">รับสินค้า</button>
 
   </div>
 </div>

@@ -1,9 +1,17 @@
+.image-container {
+    height: 500px;
+}
 
-.img-size {
+.container {
+    background-color: white;
+}
+
+.btn-size {
     width: 100%;
 }
-.cardsize {
-    vertical-align: middle;
+
+.image-size{
     width: 100%;
     height: 100%;
-  }
+    object-fit: cover;
+}
