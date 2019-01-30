@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DonateDetailService } from 'src/app/services/donate-detail/donate-detail.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgxSpinnerService } from "ngx-spinner";
+// import { NgxSpinnerService } from "ngx-spinner";
 
 
 @Component({
@@ -20,11 +20,11 @@ export class DonateDetailComponent implements OnInit {
     private donateDetailService: DonateDetailService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private spinner: NgxSpinnerService,
+    // private spinner: NgxSpinnerService,
   ) { }
 
   ngOnInit() {
-    this.spinner.show();
+    // this.spinner.show();
     this.activatedRoute
       .queryParams
       .subscribe(params => {
@@ -45,7 +45,7 @@ export class DonateDetailComponent implements OnInit {
       this.data = await this.donateDetailService.getDetail(idProd);
       this.imageArray = this.data.data.image;
       console.log(this.data);
-      this.spinner.hide();
+      // this.spinner.hide();
     } catch (error) {
       throw error
     }
@@ -56,11 +56,11 @@ export class DonateDetailComponent implements OnInit {
       product_id: this.itemId,
       user_id: this.userId
     }
-    this.spinner.show();
+    // this.spinner.show();
     const res: any = await this.donateDetailService.updateStatus(body);
     console.log(res);
     this.router.navigate(['home']);
-    this.spinner.hide();
+    // this.spinner.hide();
   }
 
 }
