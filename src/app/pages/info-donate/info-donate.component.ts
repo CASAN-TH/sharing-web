@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 import { ModalConfirmComponent } from 'src/app/modals/modal-confirm/modal-confirm.component';
 import { MatDialog } from '@angular/material';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { MeService } from 'src/app/services/me/me.service';
 
 @Component({
   selector: 'app-info-donate',
@@ -27,6 +28,8 @@ export class InfoDonateComponent implements OnInit {
     ]
   }
 
+  user: any;
+
   size: any = [
     {
       value: 'S'
@@ -47,16 +50,22 @@ export class InfoDonateComponent implements OnInit {
     private router: Router,
     private spinner: NgxSpinnerService,
     public dialog: MatDialog,
+    private meService: MeService
   ) { }
 
   ngOnInit() {
-
+    this.getUser();
   }
 
   getSize(i) {
     // console.log(i);
     this.data.size = i
   }
+
+  async getUser() {
+    this.user = await this.meService.getProfile();
+    console.log(this.user.data._id);
+  };
 
   async onSaveDonate() {
     console.log('asd');
@@ -65,7 +74,7 @@ export class InfoDonateComponent implements OnInit {
       size: this.data.size,
       detail: this.data.detail,
       image: this.images,
-      donator: 'pure'
+      donator: this.user.data._id
     }
     console.log(body);
     let res = await this.InfoDonateService.saveDonate(body);

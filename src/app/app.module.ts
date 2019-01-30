@@ -66,7 +66,8 @@ const apiSrvCfg = environment;
     AuthModule.forRoot(apiSrvCfg)
   ],
   entryComponents: [
-    ModalConfirmComponent
+    ModalConfirmComponent,
+    DonateDetailComponent
   ],
   exports: [
     MatIconModule
