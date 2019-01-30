@@ -1,11 +1,17 @@
-<mat-toolbar color="primary">
+<mat-toolbar style="background-color: white">
   <mat-toolbar-row class="container">
-    <span (click)="onClickToHome()" style="cursor: pointer;">{{appName}}</span>
+    <div style="border-right: solid 1px black">
+      <img style="width: 25px;margin-right: 10px;position: relative;top: 2px" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548819371/web-sharing/logo.png">
+    </div>
+    <div>
+      <img style="width: 100px;margin-left: 10px" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548819374/web-sharing/font.png">
+    </div>
+    <!-- <span (click)="onClickToHome()" style="cursor: pointer;">{{appName}}</span> -->
     <span class="example-spacer"></span>
-    <span *ngIf="userAuth">
+    <span *ngIf="userAuth" style="position: relative;top: 5px">
       <mat-icon class="example-icon">notifications</mat-icon>
     </span>
-    <span class="profile" *ngIf="userAuth" [matMenuTriggerFor]="profile">
+    <span class="profile" *ngIf="userAuth" [matMenuTriggerFor]="profile" style="position: relative;top: 5px">
       <img [src]="userAuth.profileImageURL" class="img" alt="img">
       <span class="user-name">{{userAuth.username}}</span>
     </span>
