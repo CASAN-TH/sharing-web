@@ -31,7 +31,7 @@
     "ng-simple-slideshow": "^1.2.7",
     "ng6-md-auth": "0.0.12",
     "ngx-spinner": "^6.1.2",
-    "rxjs": "^6.0.0",
+    "rxjs": "6.3.3",
     "rxjs-compat": "^6.3.3",
     "videogular": "^2.2.1",
     "videogular-angulartics": "^1.4.4",
