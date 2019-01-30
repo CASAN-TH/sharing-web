@@ -15,3 +15,42 @@
     height: 100%;
     object-fit: cover;
 }
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.name-prod{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.topic-prod{
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.border-bottom {
+    border-bottom: solid 1px #e2e2e2;
+}
+
+.margin-top{
+    margin-top: 16px;
+}
+
+.scroll-detail {
+    overflow: auto;
+}
+
+.height-detail {
+    height: 275px;
+}
+
+.height-detail-small {
+    height: 75px;
+}
+
+.word-wrap {
+    word-wrap: break-word;
+}
+
