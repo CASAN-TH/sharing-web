@@ -74,4 +74,8 @@ export class DonateDetailComponent implements OnInit {
     }
   }
 
+  onCancel() {
+    this.dialogRef.close();
+  }
+
 }

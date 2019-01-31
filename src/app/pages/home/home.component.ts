@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
   user: any;
 
   ngOnInit() {
-    this.getDonate();
     this.getUser();
+    this.getDonate();
   }
 
   async getUser() {
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   };
 
   async getDonate() {
-    this.data = await this.donateService.getDonate()
+    this.data = await this.donateService.getDonate();
     console.log(this.data)
   }
 
@@ -53,7 +53,6 @@ export class HomeComponent implements OnInit {
       height: '600px',
       data: { _id: item._id, user_id: this.user.data._id }
     });
-
     dialogRef.afterClosed().subscribe(result => {
 
     });
