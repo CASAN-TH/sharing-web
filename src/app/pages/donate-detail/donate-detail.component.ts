@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DonateDetailService } from 'src/app/services/donate-detail/donate-detail.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -25,33 +25,30 @@ export class DonateDetailComponent implements OnInit {
     private dialogRef: MatDialogRef<DonateDetailComponent>,
     public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public modalData: any,
-  ) { }
+  ) {
+
+  }
 
   ngOnInit() {
-    // this.spinner.show();
-    // this.activatedRoute
-    //   .queryParams
-    //   .subscribe(params => {
-    //     if (params['id'] && params['user_id']) {
-    //       this.itemId = params['id'];
-    //       this.userId = params['user_id']
-    //     }
-    //   });
+    setTimeout(() => {
+      this.spinner.show();
+    }, 5);
     this.getData();
-    console.log(this.modalData);
   }
 
   async getData() {
+    let idProd = {
+      id: this.modalData._id
+    }
     try {
-      let idProd = {
-        id: this.modalData._id
-      }
       this.data = await this.donateDetailService.getDetail(idProd);
       this.imageArray = this.data.data.image;
       console.log(this.data);
       this.spinner.hide();
     } catch (error) {
+      this.spinner.hide();
       throw error
+
     }
   }
 
@@ -67,9 +64,8 @@ export class DonateDetailComponent implements OnInit {
       // this.router.navigate(['home']);
       this.dialogRef.close();
       this.spinner.hide();
-      this.spinner.hide();
     } catch (error) {
-      this.dialogRef.close();
+      this.dialogRef.close('confirm');
       this.spinner.hide();
     }
   }

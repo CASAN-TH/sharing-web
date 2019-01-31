@@ -5,6 +5,7 @@ import { Component, OnInit } from "@angular/core";
 import { DonateServiceService } from "src/app/services/donate-servic/donate-service.service";
 import { MeService } from 'src/app/services/me/me.service';
 import { MatDialog } from '@angular/material';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -17,25 +18,51 @@ export class HomeComponent implements OnInit {
     private donateService: DonateServiceService,
     private router: Router,
     private meService: MeService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private spinner: NgxSpinnerService,
   ) { }
 
   data: any = [];
   user: any;
+  afterClosed: Boolean = false;
 
   ngOnInit() {
-    this.getUser();
-    this.getDonate();
+    if (!this.afterClosed) {
+      this.spinner.show();
+      this.getUser();
+    }
   }
 
   async getUser() {
-    this.user = await this.meService.getProfile();
-    console.log(this.user);
+    try {
+      this.user = await this.meService.getProfile();
+      console.log(this.user);
+      this.getDonate();
+    } catch (error) {
+
+    }
   };
 
   async getDonate() {
-    this.data = await this.donateService.getDonate();
-    console.log(this.data)
+    if (this.afterClosed) {
+      this.spinner.show();
+      try {
+        this.data = await this.donateService.getDonate();
+        console.log(this.data)
+        this.spinner.hide();
+      } catch (error) {
+        this.spinner.hide();
+      }
+    } else {
+      try {
+        this.data = await this.donateService.getDonate();
+        console.log(this.data)
+        this.spinner.hide();
+      } catch (error) {
+        this.spinner.hide();
+      }
+    }
+
   }
 
   onCreateDonate() {
@@ -54,7 +81,11 @@ export class HomeComponent implements OnInit {
       data: { _id: item._id, user_id: this.user.data._id }
     });
     dialogRef.afterClosed().subscribe(result => {
-
+      const res = result;
+      if (res === 'confirm') {
+        this.afterClosed = true;
+        this.getDonate();
+      }
     });
   }
 }
