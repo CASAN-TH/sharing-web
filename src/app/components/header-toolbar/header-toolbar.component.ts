@@ -27,4 +27,8 @@ export class HeaderToolbarComponent implements OnInit {
   }
 
   ngOnInit() { }
+
+  openProfile() {
+    console.log('openProfile');
+  }
 }

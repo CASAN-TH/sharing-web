@@ -1,24 +1,45 @@
-.example-icon {
-    padding: 0 14px;
-  }
-  
-  .example-spacer {
+.example-spacer {
     flex: 1 1 auto;
-  }
-  
-  .profile {
+}
+
+.profile {
     font-size: 1rem !important;
-    margin-right: 1rem;
+    margin-right: 2rem;
     margin-left: 2rem;
     margin-top: -0.5rem;
     cursor: pointer;
-  }
-  
-  .img {
+}
+
+.img {
     width: 24px;
     height: 24px;
     border-radius: 100%;
-  }
-  .user-name{
+}
+
+.user-name {
     padding-left: 0.5rem;
-  }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.heart-color {
+    color: red;
+}
+
+.favoriteX {
+    position: relative;
+    bottom: 5px;
+    font-size: 1rem;
+}
+
+.favoriteNumber {
+    font-size: 1rem;
+    position: relative;
+    bottom: 5px;
+}
+
+.pointer-heart{
+    cursor: default;
+}
