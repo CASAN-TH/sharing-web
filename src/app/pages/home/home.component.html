@@ -18,8 +18,8 @@
 
         </div>
     </div>
-    <div name="divNgifRowMt2" class="row" *ngIf="data">
-        <div class="col-sm-6 col-md-4" *ngFor="let item of data.data" (click)="onModalDetail(item)">
+    <div name="divNgifRowMt2" class="row" *ngIf="bySize">
+        <div class="col-sm-6 col-md-4" *ngFor="let item of bySize.data" (click)="onModalDetail(item)">
             <img *ngIf="item && item.image.length > 0" name="imageCardShirt" class="img-style border-image pointer " style="border-radius: 2%"
                 [src]="item.image[0].url">
             <img *ngIf="item && item.image.length < 1" name="imageCardShirt" class="img-style border-image pointer " src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548731775/web-sharing/no-image.png">

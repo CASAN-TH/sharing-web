@@ -20,23 +20,36 @@ export class HomeComponent implements OnInit {
     public dialog: MatDialog
   ) { }
 
-  data: any = [];
+  // data: any = [];
   user: any;
+  bySize: any;
+  userSize: any;
 
   ngOnInit() {
-    this.getDonate();
+    // this.getDonate();
     this.getUser();
+  }
+
+  async getDonateBySize() {
+    let body = {
+      size: this.userSize
+    }
+    this.bySize = await this.donateService.getDonateBySize(body);
+    console.log(this.bySize)
   }
 
   async getUser() {
     this.user = await this.meService.getProfile();
     console.log(this.user);
+    this.userSize = this.user.data.ref1
+    this.getDonateBySize();
+
   };
 
-  async getDonate() {
-    this.data = await this.donateService.getDonate()
-    console.log(this.data)
-  }
+  // async getDonate() {
+  //   this.data = await this.donateService.getDonate();
+  //   console.log(this.data)
+  // }
 
   onCreateDonate() {
     this.router.navigate(['/info-donate']);

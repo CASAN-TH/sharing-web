@@ -19,4 +19,8 @@ export class DonateServiceService {
   getDonate() {
     return this.http.get(environment.apiUrl +'/api/donates', { headers: this.authorizationHeader() }).toPromise();
   }
+
+  getDonateBySize(body){
+    return this.http.post(environment.apiUrl + '/api/get-donate-by-size', body, { headers: this.authorizationHeader() }).toPromise()
+  }
 }
