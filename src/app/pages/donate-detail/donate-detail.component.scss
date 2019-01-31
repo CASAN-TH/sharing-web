@@ -54,3 +54,9 @@
     word-wrap: break-word;
 }
 
+.text-overflow {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
