@@ -1,6 +1,6 @@
 <div name="divRowHeader" class="row pt-3">
   <div name="divColHeader" class="col">
-    <h5 name="h5Header">รูปสิ่งที่แบ่งปัน</h5>
+    <h5 name="h5Header">รูปสิ่งที่แบ่งปัน <span class="red-color">*</span></h5>
   </div>
 </div>
 
@@ -76,7 +76,7 @@
 <div name="divRowBtn" class="row">
   <div name="divColBlank4" class="col-4"></div>
   <div name="divColBtnSave" class="col-12 col-md-2 mt-3">
-    <button name="btnSave" mat-flat-button (click)="onSaveDonate()" class="full-width" color="primary" [disabled]="!data.name || !data.size || !data.detail">บันทึก</button>
+    <button name="btnSave" mat-flat-button (click)="onSaveDonate()" class="full-width" color="primary" [disabled]="!data.name || !data.size || !data.detail || images.length < 1">บันทึก</button>
   </div>
   <div name="divColBtnCancel" class="col-12 col-md-2 mt-3">
     <button name="btnCancel" mat-stroked-button class="full-width" (click)="onCancel()">ยกเลิก</button>
