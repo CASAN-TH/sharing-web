@@ -6,6 +6,7 @@ import { DonateServiceService } from "src/app/services/donate-servic/donate-serv
 import { MeService } from 'src/app/services/me/me.service';
 import { MatDialog } from '@angular/material';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { throwError } from 'rxjs';
 
 
 @Component({
@@ -35,6 +36,25 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  ngDoCheck() {
+    if (this.afterClosed) {
+      this.afterClosed = false;
+      this.getDonateBySize();
+    }
+  }
+
+  async getUser() {
+    try {
+      this.user = await this.meService.getProfile();
+      console.log(this.user);
+      this.userSize = this.user.data.ref1
+      this.getDonateBySize();
+    } catch (error) {
+      this.spinner.hide();
+      throw error
+    }
+  };
+
   async getDonateBySize() {
     try {
       let body = {
@@ -48,17 +68,6 @@ export class HomeComponent implements OnInit {
       throw error
     }
   }
-
-  async getUser() {
-    try {
-      this.user = await this.meService.getProfile();
-      console.log(this.user);
-      this.userSize = this.user.data.ref1
-      this.getDonateBySize();
-    } catch (error) {
-
-    }
-  };
 
   // async getDonate() {
   //   if (this.afterClosed) {
@@ -101,7 +110,6 @@ export class HomeComponent implements OnInit {
       const res = result;
       if (res === 'confirm') {
         this.afterClosed = true;
-        this.getDonateBySize();
       }
     });
   }

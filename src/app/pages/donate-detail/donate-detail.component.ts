@@ -62,16 +62,15 @@ export class DonateDetailComponent implements OnInit {
       const res: any = await this.donateDetailService.updateStatus(body);
       console.log(res);
       // this.router.navigate(['home']);
-      this.dialogRef.close();
-      this.spinner.hide();
-    } catch (error) {
       this.dialogRef.close('confirm');
+    } catch (error) {
       this.spinner.hide();
+      this.dialogRef.close();
     }
   }
 
   onCancel() {
-    this.dialogRef.close();
+    this.dialogRef.close('confirm');
   }
 
 }
