@@ -31,20 +31,23 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar
   ) {
-    this.userAuth.isLoggingIn.subscribe(() => {
-      this.spinner.show();
-    });
-    this.userAuth.isLoggedIn.subscribe(value => {
-      this.spinner.hide();
-      if (this.userAuth.user) {
-        this.router.navigate(["/home"]);
-      }
-    });
+    // this.userAuth.isLoggingIn.subscribe(() => {
 
-    this.userAuth.isLoggedFail.subscribe(error => {
-      this.spinner.hide();
-      console.log(error);
-    });
+    // });
+    // this.userAuth.isLoggedIn.subscribe(value => {
+    //   this.spinner.hide();
+    //   if (this.userAuth.user) {
+    //     this.router.navigate(["/home"]);
+    //   }
+    // });
+
+    // this.userAuth.isLoggedFail.subscribe(error => {
+    //   this.spinner.hide();
+    //   console.log(error);
+    // });
+    if (this.userAuth.user) {
+      this.router.navigate(["/home"]);
+    }
   }
   ngOnInit() {
     this.firstFormGroup = this.formBuilder.group({
@@ -59,10 +62,11 @@ export class RegisterComponent implements OnInit {
   }
 
   async saveRegister() {
+    this.spinner.show();
     try {
       const res: any = await this.userAuth.register(this.register)
       console.log(res)
-      if (res.token) {
+      if (res && res.status === 200) {
         this.snackBar.open('สมัครสมาชิกสำเร็จ', '', {
           duration: 3000,
         });
