@@ -35,6 +35,6 @@ export class HeaderToolbarComponent implements OnInit {
   }
 
   openProfile() {
-    console.log('openProfile');
+
   }
 }
