@@ -20,6 +20,7 @@ export class EditprofileComponent implements OnInit {
     {
       value: 'XL'
     },
+    
   ];
 
   constructor() { }
