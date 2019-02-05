@@ -75,8 +75,7 @@ const apiSrvCfg = environment;
   ],
   entryComponents: [
     ModalConfirmComponent,
-    DonateDetailComponent,
-    UserProfileComponent
+    DonateDetailComponent
   ],
   exports: [
     MatIconModule
