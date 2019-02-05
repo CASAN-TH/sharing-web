@@ -11,7 +11,10 @@ import { AuthService } from "ng6-md-auth";
 export class HeaderToolbarComponent implements OnInit {
   appName = `${environment.appName}`;
   userAuth: any;
-  constructor(private userAuthSrv: AuthService, private router: Router) {
+  constructor(
+    private userAuthSrv: AuthService,
+    private router: Router
+  ) {
     this.userAuthSrv.isLoggedIn.subscribe(value => {
       this.userAuth = this.userAuthSrv.user;
     });

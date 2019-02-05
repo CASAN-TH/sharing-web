@@ -27,7 +27,9 @@ import { SlideshowModule } from 'ng-simple-slideshow';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ModalConfirmComponent } from './modals/modal-confirm/modal-confirm.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { UserProfileComponent } from "./components/user-profile/user-profile.component";
 
 
 const apiSrvCfg = environment;
@@ -41,7 +43,9 @@ const apiSrvCfg = environment;
     HeaderToolbarComponent,
     InfoDonateComponent,
     DonateDetailComponent,
-    ModalConfirmComponent
+    ModalConfirmComponent,
+    ProfileComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +71,8 @@ const apiSrvCfg = environment;
   ],
   entryComponents: [
     ModalConfirmComponent,
-    DonateDetailComponent
+    DonateDetailComponent,
+    UserProfileComponent
   ],
   exports: [
     MatIconModule
