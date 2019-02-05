@@ -15,18 +15,11 @@ export class HeaderToolbarComponent implements OnInit {
   constructor(
     private userAuthSrv: AuthService,
     private router: Router,
-    private meService: MeService
   ) {
-
     this.userAuthSrv.isLoggedIn.subscribe(value => {
       this.userAuth = this.userAuthSrv.user;
-      console.log('fromIsLogging');
     });
-    const token = window.localStorage.getItem('token@sharing-web-dev')
-    if (token) {
       this.userAuth = this.userAuthSrv.user;
-    }
-    // this.getProfile();
   }
   onLogout() {
     this.userAuthSrv.logout();
@@ -40,18 +33,6 @@ export class HeaderToolbarComponent implements OnInit {
   ngOnInit() {
 
   }
-
-  // async getProfile() {
-  //   try {
-  //     const token = window.localStorage.getItem('token@sharing-web-dev')
-  //     if (token) {
-  //       this.userAuth = await this.meService.getProfile();
-  //       console.log(this.userAuth)
-  //     }
-  //   } catch (error) {
-  //     throw error
-  //   }
-  // }
 
   openProfile() {
     console.log('openProfile');

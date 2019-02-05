@@ -70,7 +70,7 @@ export class RegisterComponent implements OnInit {
         this.snackBar.open('สมัครสมาชิกสำเร็จ', '', {
           duration: 3000,
         });
-        window.localStorage.setItem('token@sharing-web-dev', res.token)
+        this.userAuth.onSuccess(res.token)
         this.router.navigate(["/home"]);
         this.spinner.hide()
       }
