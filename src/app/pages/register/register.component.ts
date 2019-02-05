@@ -71,15 +71,21 @@ export class RegisterComponent implements OnInit {
           duration: 3000,
         });
         this.userAuth.onSuccess(res.token)
-        // this.router.navigate(["/home"]);
         this.spinner.hide()
       }
     } catch (error) {
-      this.snackBar.open('ข้อมูลผิดพลาด', 'โปรดกรอกข้อมูลใหม่', {
-        duration: 3000,
-      });
-      console.log(error);
-      this.spinner.hide()
+      if (error) {
+        this.spinner.hide()
+        if (error['error']['message'] === '11000 duplicate key error collection: auth.users index: username already exists') {
+          this.snackBar.open('มีชื่อผู้ใช้นี้แล้ว', 'โปรดกรอกข้อมูลใหม่', {
+            duration: 3000,
+          });
+        } else if (error['error']['message'] === '11000 duplicate key error collection: auth.users index: email already exists') {
+          this.snackBar.open('อีเมลนี้ถูกใช้แล้ว', 'โปรดกรอกข้อมูลใหม่', {
+            duration: 3000,
+          });
+        }
+      }  
     }
   }
 
