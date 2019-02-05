@@ -31,20 +31,20 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar
   ) {
-    // this.userAuth.isLoggingIn.subscribe(() => {
+    this.userAuth.isLoggingIn.subscribe(() => {
 
-    // });
-    // this.userAuth.isLoggedIn.subscribe(value => {
-    //   this.spinner.hide();
-    //   if (this.userAuth.user) {
-    //     this.router.navigate(["/home"]);
-    //   }
-    // });
+    });
+    this.userAuth.isLoggedIn.subscribe(value => {
+      this.spinner.hide();
+      if (this.userAuth.user) {
+        this.router.navigate(["/home"]);
+      }
+    });
 
-    // this.userAuth.isLoggedFail.subscribe(error => {
-    //   this.spinner.hide();
-    //   console.log(error);
-    // });
+    this.userAuth.isLoggedFail.subscribe(error => {
+      this.spinner.hide();
+      console.log(error);
+    });
     if (this.userAuth.user) {
       this.router.navigate(["/home"]);
     }
@@ -71,7 +71,7 @@ export class RegisterComponent implements OnInit {
           duration: 3000,
         });
         this.userAuth.onSuccess(res.token)
-        this.router.navigate(["/home"]);
+        // this.router.navigate(["/home"]);
         this.spinner.hide()
       }
     } catch (error) {
