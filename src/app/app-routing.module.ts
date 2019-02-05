@@ -7,6 +7,7 @@ import { ForgotComponent } from "./pages/forgot/forgot.component";
 import { AuthGuardService } from "ng6-md-auth";
 import { InfoDonateComponent} from "./pages/info-donate/info-donate.component"
 import { DonateDetailComponent } from "./pages/donate-detail/donate-detail.component";
+import { EditprofileComponent } from './pages/editprofile/editprofile.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: "forgot", component: ForgotComponent },
   { path: "info-donate", component: InfoDonateComponent },
   { path: "donate-detail", component: DonateDetailComponent },
+  { path: "editprofile", component: EditprofileComponent },
 
   
 ];

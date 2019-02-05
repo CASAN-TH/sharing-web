@@ -28,6 +28,9 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ModalConfirmComponent } from './modals/modal-confirm/modal-confirm.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { EditprofileComponent } from "./pages/editprofile/editprofile.component";
+
+
 
 
 const apiSrvCfg = environment;
@@ -41,7 +44,8 @@ const apiSrvCfg = environment;
     HeaderToolbarComponent,
     InfoDonateComponent,
     DonateDetailComponent,
-    ModalConfirmComponent
+    ModalConfirmComponent,
+    EditprofileComponent
   ],
   imports: [
     BrowserModule,
