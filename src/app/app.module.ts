@@ -49,7 +49,7 @@ const apiSrvCfg = environment;
     ModalConfirmComponent,
     ProfileComponent,
     UserProfileComponent,
-    EditprofileComponent
+    EditprofileComponent 
   ],
   imports: [
     BrowserModule,
@@ -75,8 +75,7 @@ const apiSrvCfg = environment;
   ],
   entryComponents: [
     ModalConfirmComponent,
-    DonateDetailComponent,
-    UserProfileComponent
+    DonateDetailComponent
   ],
   exports: [
     MatIconModule

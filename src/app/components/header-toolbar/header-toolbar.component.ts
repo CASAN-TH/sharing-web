@@ -1,3 +1,4 @@
+import { MeService } from 'src/app/services/me/me.service';
 import { Component, OnInit } from "@angular/core";
 import { environment } from "src/environments/environment";
 import { Router } from "@angular/router";
@@ -13,12 +14,12 @@ export class HeaderToolbarComponent implements OnInit {
   userAuth: any;
   constructor(
     private userAuthSrv: AuthService,
-    private router: Router
+    private router: Router,
   ) {
     this.userAuthSrv.isLoggedIn.subscribe(value => {
       this.userAuth = this.userAuthSrv.user;
     });
-    this.userAuth = this.userAuthSrv.user;
+      this.userAuth = this.userAuthSrv.user;
   }
   onLogout() {
     this.userAuthSrv.logout();
@@ -29,9 +30,11 @@ export class HeaderToolbarComponent implements OnInit {
     this.router.navigate(["/home"]);
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+  }
 
   openProfile() {
-    console.log('openProfile');
+    this.router.navigate(["profile"]);
   }
 }

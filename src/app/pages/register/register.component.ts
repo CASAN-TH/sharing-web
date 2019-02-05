@@ -31,20 +31,20 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar
   ) {
-    // this.userAuth.isLoggingIn.subscribe(() => {
+    this.userAuth.isLoggingIn.subscribe(() => {
 
-    // });
-    // this.userAuth.isLoggedIn.subscribe(value => {
-    //   this.spinner.hide();
-    //   if (this.userAuth.user) {
-    //     this.router.navigate(["/home"]);
-    //   }
-    // });
+    });
+    this.userAuth.isLoggedIn.subscribe(value => {
+      this.spinner.hide();
+      if (this.userAuth.user) {
+        this.router.navigate(["/home"]);
+      }
+    });
 
-    // this.userAuth.isLoggedFail.subscribe(error => {
-    //   this.spinner.hide();
-    //   console.log(error);
-    // });
+    this.userAuth.isLoggedFail.subscribe(error => {
+      this.spinner.hide();
+      console.log(error);
+    });
     if (this.userAuth.user) {
       this.router.navigate(["/home"]);
     }
@@ -70,15 +70,22 @@ export class RegisterComponent implements OnInit {
         this.snackBar.open('สมัครสมาชิกสำเร็จ', '', {
           duration: 3000,
         });
-        this.router.navigate(["/login"]);
+        this.userAuth.onSuccess(res.token)
         this.spinner.hide()
       }
     } catch (error) {
-      this.snackBar.open('ข้อมูลผิดพลาด', 'โปรดกรอกข้อมูลใหม่', {
-        duration: 3000,
-      });
-      console.log(error);
-      this.spinner.hide()
+      if (error) {
+        this.spinner.hide()
+        if (error['error']['message'] === '11000 duplicate key error collection: auth.users index: username already exists') {
+          this.snackBar.open('มีชื่อผู้ใช้นี้แล้ว', 'โปรดกรอกข้อมูลใหม่', {
+            duration: 3000,
+          });
+        } else if (error['error']['message'] === '11000 duplicate key error collection: auth.users index: email already exists') {
+          this.snackBar.open('อีเมลนี้ถูกใช้แล้ว', 'โปรดกรอกข้อมูลใหม่', {
+            duration: 3000,
+          });
+        }
+      }  
     }
   }
 
