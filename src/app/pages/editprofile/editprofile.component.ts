@@ -7,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditprofileComponent implements OnInit {
 
+  size: any = [
+    {
+      value: 'S'
+    },
+    {
+      value: 'M'
+    },
+    {
+      value: 'L'
+    },
+    {
+      value: 'XL'
+    },
+  ];
+
   constructor() { }
 
   ngOnInit() {
