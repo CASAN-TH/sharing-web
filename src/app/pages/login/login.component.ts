@@ -21,31 +21,34 @@ export class LoginComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private snackBar: MatSnackBar
   ) {
-    this.userAuth.isLoggingIn.subscribe(()=>{
+    this.userAuth.isLoggingIn.subscribe(() => {
       this.spinner.show();
     });
     this.userAuth.isLoggedIn.subscribe(value => {
       this.spinner.hide();
-      if(this.userAuth.user){
+      if (this.userAuth.user) {
         this.router.navigate(["/home"]);
       }
     });
-    this.userAuth.isLoggedFail.subscribe(error=>{
+    this.userAuth.isLoggedFail.subscribe(error => {
       this.spinner.hide();
-      if(error.error){
+      if (error.error) {
         this.snackBar.open(error.error.message, "Error", {
           duration: 2000,
         });
-      }else{
+      } else {
         error.error.message = "Connection error, please try again";
         this.snackBar.open(error.error.message, "Error", {
           duration: 2000,
         });
       }
-      
+
     });
+    if (this.userAuth.user) {
+      this.router.navigate(["/home"]);
+    }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
