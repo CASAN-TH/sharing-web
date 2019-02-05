@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: "info-donate", component: InfoDonateComponent },
   { path: "donate-detail", component: DonateDetailComponent },
   { path: "profile", component: ProfileComponent },
-  { path: "editprofile", component: EditprofileComponent },
+  { path: "edit-profile", component: EditprofileComponent },
 
 ];
 
