@@ -49,7 +49,7 @@ const apiSrvCfg = environment;
     ModalConfirmComponent,
     ProfileComponent,
     UserProfileComponent,
-    EditprofileComponent
+    EditprofileComponent 
   ],
   imports: [
     BrowserModule,
