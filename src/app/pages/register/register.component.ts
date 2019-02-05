@@ -70,7 +70,8 @@ export class RegisterComponent implements OnInit {
         this.snackBar.open('สมัครสมาชิกสำเร็จ', '', {
           duration: 3000,
         });
-        this.router.navigate(["/login"]);
+        window.localStorage.setItem('token@sharing-web-dev', res.token)
+        this.router.navigate(["/home"]);
         this.spinner.hide()
       }
     } catch (error) {

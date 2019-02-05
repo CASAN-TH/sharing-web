@@ -1,3 +1,4 @@
+import { MeService } from 'src/app/services/me/me.service';
 import { Component, OnInit } from "@angular/core";
 import { environment } from "src/environments/environment";
 import { Router } from "@angular/router";
@@ -11,11 +12,21 @@ import { AuthService } from "ng6-md-auth";
 export class HeaderToolbarComponent implements OnInit {
   appName = `${environment.appName}`;
   userAuth: any;
-  constructor(private userAuthSrv: AuthService, private router: Router) {
+  constructor(
+    private userAuthSrv: AuthService,
+    private router: Router,
+    private meService: MeService
+  ) {
+
     this.userAuthSrv.isLoggedIn.subscribe(value => {
       this.userAuth = this.userAuthSrv.user;
+      console.log('fromIsLogging');
     });
-    this.userAuth = this.userAuthSrv.user;
+    const token = window.localStorage.getItem('token@sharing-web-dev')
+    if (token) {
+      this.userAuth = this.userAuthSrv.user;
+    }
+    // this.getProfile();
   }
   onLogout() {
     this.userAuthSrv.logout();
@@ -26,7 +37,21 @@ export class HeaderToolbarComponent implements OnInit {
     this.router.navigate(["/home"]);
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+  }
+
+  // async getProfile() {
+  //   try {
+  //     const token = window.localStorage.getItem('token@sharing-web-dev')
+  //     if (token) {
+  //       this.userAuth = await this.meService.getProfile();
+  //       console.log(this.userAuth)
+  //     }
+  //   } catch (error) {
+  //     throw error
+  //   }
+  // }
 
   openProfile() {
     console.log('openProfile');
