@@ -14,17 +14,17 @@ import { IntroduceComponent } from "./pages/introduce/introduce.component";
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "home",
+    redirectTo: "introduce",
     pathMatch: "full"
   },
   { path: "home", component: HomeComponent, canActivate: [AuthGuardService] },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "forgot", component: ForgotComponent },
-  { path: "info-donate", component: InfoDonateComponent },
-  { path: "donate-detail", component: DonateDetailComponent },
-  { path: "profile", component: ProfileComponent },
-  { path: "edit-profile", component: EditprofileComponent },
+  { path: "info-donate", component: InfoDonateComponent, canActivate: [AuthGuardService] },
+  { path: "donate-detail", component: DonateDetailComponent, canActivate: [AuthGuardService] },
+  { path: "profile", component: ProfileComponent, canActivate: [AuthGuardService] },
+  { path: "edit-profile", component: EditprofileComponent, canActivate: [AuthGuardService] },
   { path: "introduce", component: IntroduceComponent },
 
 ];
