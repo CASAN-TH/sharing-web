@@ -31,6 +31,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UserProfileComponent } from "./components/user-profile/user-profile.component";
 import { EditprofileComponent } from "./pages/editprofile/editprofile.component";
+import { IntroduceComponent } from './pages/introduce/introduce.component';
 
 
 
@@ -49,7 +50,8 @@ const apiSrvCfg = environment;
     ModalConfirmComponent,
     ProfileComponent,
     UserProfileComponent,
-    EditprofileComponent 
+    EditprofileComponent,
+    IntroduceComponent 
   ],
   imports: [
     BrowserModule,
