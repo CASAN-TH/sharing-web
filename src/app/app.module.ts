@@ -35,6 +35,7 @@ import { DonateHistoryComponent } from './components/donate-history/donate-histo
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { IntroduceComponent } from './pages/introduce/introduce.component';
+import { PointComponent } from './components/point/point.component';
 
 
 
@@ -55,7 +56,8 @@ const apiSrvCfg = environment;
     UserProfileComponent,
     EditprofileComponent,
     DonateHistoryComponent,
-    IntroduceComponent
+    IntroduceComponent,
+    PointComponent
   ],
   imports: [
     BrowserModule,
