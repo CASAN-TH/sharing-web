@@ -11,6 +11,9 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./introduce.component.scss']
 })
 export class IntroduceComponent implements OnInit {
+
+  userAuthData: any
+
   constructor(
     private donateService: DonateServiceService,
     private router: Router,
@@ -20,7 +23,7 @@ export class IntroduceComponent implements OnInit {
   ) {
     if (this.userAuth.user) {
       // this.router.navigate(["/home"]);
-      console.log(this.userAuth.user)
+      this.userAuthData = this.userAuth.user
     }
   }
 
