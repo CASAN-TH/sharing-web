@@ -31,6 +31,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UserProfileComponent } from "./components/user-profile/user-profile.component";
 import { EditprofileComponent } from "./pages/editprofile/editprofile.component";
+import { DonateHistoryComponent } from './components/donate-history/donate-history.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -49,7 +52,8 @@ const apiSrvCfg = environment;
     ModalConfirmComponent,
     ProfileComponent,
     UserProfileComponent,
-    EditprofileComponent 
+    EditprofileComponent,
+    DonateHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +75,8 @@ const apiSrvCfg = environment;
     NgMatSearchBarModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatTabsModule,
+    MatListModule,
     AuthModule.forRoot(apiSrvCfg)
   ],
   entryComponents: [

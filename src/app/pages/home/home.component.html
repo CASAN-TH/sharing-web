@@ -9,7 +9,7 @@
         </div>
         <div name="divCol62" class="col-2 center">
             <div name="divBtnonCreateDonate">
-                <button name="btnOnCreateDonate" style="width: 100%" mat-flat-button color="primary" (click)="onCreateDonate()">บริจาค</button>
+                <button name="btnOnCreateDonate" style="width: 100%" mat-stroked-button class="btn-style" (click)="onCreateDonate()">บริจาค</button>
             </div>
         </div>
     </div>
@@ -24,7 +24,8 @@
                 style="border-radius: 2%" [src]="item.image[0].url" (click)="onModalDetail(item)">
             <img *ngIf="item && item.image && item.image.length < 1" name="imageCardShirt" class="img-style border-image pointer "
                 src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548731775/web-sharing/no-image.png" (click)="onModalDetail(item)">
-            <div class="text-overflow text-image border-radius pointer" style="padding-top: 5px;padding-bottom: 5px" (click)="onModalDetail(item)">
+            <div class="text-overflow text-image border-radius pointer" style="padding-top: 5px;padding-bottom: 5px"
+                (click)="onModalDetail(item)">
                 <div style="padding-left: 10px;padding-bottom: 10px">
                     <p style="margin-bottom: 0px" class="font-prod">{{item.name}}</p>
                     <p style="margin-bottom: 0px" class="font-prod">ขนาด : {{item.size}}</p>
