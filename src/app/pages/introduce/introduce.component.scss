@@ -1,0 +1,93 @@
+.mat-fab{
+    width: 8rem;
+    height: 8rem;
+    mat-icon{
+      margin-left: -2.5rem;
+      margin-top: -2.5rem;
+      font-size: 4rem;
+    }
+  }
+  .home-big-button-svg {
+    display: block;
+    fill: #fff;
+    width: 4rem;
+    height: 4rem;
+  }
+  .green{
+    background-color: #a9c85f !important;
+  }
+  
+  
+  .search-position {
+    position: absolute;
+    right: 350px;
+  
+  }
+  .margin {
+      border: solid 1px;
+      // margin: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      color: transparent;
+      
+  }
+  .text {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  }
+  .cardsize {
+    vertical-align: middle;
+    width: 350x;
+    height: 225px;
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
+  
+  .height-input {
+    height: 25px;
+  }
+  
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .img-style{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .text-overflow{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .text-image{
+      background-color: rgba(0, 0, 0, 0.5) !important;
+      position: relative;
+      top: -68px;
+  }
+  
+  .font-prod{
+    color: white;
+    font-weight: bold;
+  }
+  
+  .border-middle {
+    border-bottom: solid 1px #e2e2e2;
+  }
+  
+  .border-image {
+    border: solid 1px #e2e2e2;
+  }
+  
+  .border-radius {
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+  }
