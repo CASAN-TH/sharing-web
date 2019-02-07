@@ -29,6 +29,10 @@ export class HomeComponent implements OnInit {
   userSize: any;
   afterClosed: Boolean = false;
 
+  search: any = {
+    keyword: ''
+  }
+
   ngOnInit() {
     if (!this.afterClosed) {
       this.spinner.show();
@@ -41,6 +45,10 @@ export class HomeComponent implements OnInit {
       this.afterClosed = false;
       this.getDonateBySize();
     }
+  }
+
+  searchData(keyword){
+    console.log(keyword)
   }
 
   async getUser() {
