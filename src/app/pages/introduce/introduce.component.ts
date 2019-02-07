@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DonateServiceService } from 'src/app/services/donate-servic/donate-service.service';
-import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-introduce',
@@ -11,36 +7,22 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class IntroduceComponent implements OnInit {
 
-  userAuthData: any
+  images: any = [
+    {
+        "url": "http://www.toysmile.com/media/catalog/product/cache/1/image/5dbab2e28bc9b44f677294c6401487eb/d/-/d-va-hoodie-07.jpg"
+    },
+    {
+        "url": "http://fixtoys.net/upload/OVW%200041%20001.jpg"
+    },
+    {
+        "url": "http://www.toysmile.com/media/catalog/product/cache/1/image/5dbab2e28bc9b44f677294c6401487eb/d/-/d-va-dress-cosplay-03.jpg"
+    }
+]
 
-  constructor(
-    private donateService: DonateServiceService,
-    private router: Router,
-    public dialog: MatDialog,
-    private spinner: NgxSpinnerService,
-  ) { }
-
-  data: any;
+  constructor() { }
 
   ngOnInit() {
-    this.spinner.show()
     window.scrollTo(0, 0);
-    this.getDonate()
-  }
-
-  async getDonate() {
-    try {
-      this.data = await this.donateService.getDonate();
-      console.log(this.data)
-      this.spinner.hide();
-    } catch (error) {
-      this.spinner.hide();
-      throw error
-    }
-  }
-
-  openLogin() {
-    this.router.navigate(['login']);
   }
 
 }

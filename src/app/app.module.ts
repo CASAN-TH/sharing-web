@@ -36,6 +36,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { IntroduceComponent } from './pages/introduce/introduce.component';
 import { PointComponent } from './components/point/point.component';
+import { IntroduceProductComponent } from './components/introduce-product/introduce-product.component';
 
 
 
@@ -57,7 +58,8 @@ const apiSrvCfg = environment;
     EditprofileComponent,
     DonateHistoryComponent,
     IntroduceComponent,
-    PointComponent
+    PointComponent,
+    IntroduceProductComponent
   ],
   imports: [
     BrowserModule,
