@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
 
   async getUser() {
     try {
+      window.scrollTo(0, 0);
       this.user = await this.meService.getProfile();
       console.log(this.user);
       this.userSize = this.user.data.ref1

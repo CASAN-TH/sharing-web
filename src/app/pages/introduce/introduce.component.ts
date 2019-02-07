@@ -24,6 +24,7 @@ export class IntroduceComponent implements OnInit {
 
   ngOnInit() {
     this.spinner.show()
+    window.scrollTo(0, 0);
     this.getDonate()
   }
 

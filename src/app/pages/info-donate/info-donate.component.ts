@@ -63,6 +63,7 @@ export class InfoDonateComponent implements OnInit {
   }
 
   async getUser() {
+    window.scrollTo(0, 0);
     this.user = await this.meService.getProfile();
     console.log(this.user.data._id);
   };

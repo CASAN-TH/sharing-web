@@ -50,6 +50,7 @@ export class RegisterComponent implements OnInit {
     }
   }
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.firstFormGroup = this.formBuilder.group({
       Username: ['', Validators.required],
       password: ['', Validators.required]

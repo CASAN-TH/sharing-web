@@ -26,6 +26,7 @@ export class EditprofileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
   }
 
 }
