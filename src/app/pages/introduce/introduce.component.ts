@@ -1,4 +1,3 @@
-import { AuthService } from 'ng6-md-auth';
 import { Component, OnInit } from '@angular/core';
 import { DonateServiceService } from 'src/app/services/donate-servic/donate-service.service';
 import { Router } from '@angular/router';
@@ -19,13 +18,7 @@ export class IntroduceComponent implements OnInit {
     private router: Router,
     public dialog: MatDialog,
     private spinner: NgxSpinnerService,
-    private userAuth: AuthService,
-  ) {
-    if (this.userAuth.user) {
-      // this.router.navigate(["/home"]);
-      this.userAuthData = this.userAuth.user
-    }
-  }
+  ) { }
 
   data: any;
 

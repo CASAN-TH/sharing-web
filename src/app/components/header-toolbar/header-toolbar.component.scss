@@ -40,11 +40,35 @@
     bottom: 5px;
 }
 
-.pointer-heart{
+.pointer-heart {
     cursor: default;
 }
 
-.position-icon{
+.position-icon {
     position: relative;
     top: 2px;
+}
+
+.register-style {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.register-style:hover {
+    color: gray;
+}
+
+.login-style {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.login-style:hover {
+    color: gray;
+}
+
+.stick-header{
+    position: fixed;
+    top: 0px;
+    z-index: 2;
 }

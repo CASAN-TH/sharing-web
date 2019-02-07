@@ -37,4 +37,12 @@ export class HeaderToolbarComponent implements OnInit {
   openProfile() {
     this.router.navigate(["profile"]);
   }
+
+  openRegister(){
+    this.router.navigate(["register"]);
+  }
+
+  openLogin() {
+    this.router.navigate(["login"]);
+  }
 }

@@ -1,14 +1,17 @@
-<mat-toolbar style="background-color: white;border-bottom: solid 1px  #e2e2e2">
+<mat-toolbar style="background-color: white;border-bottom: solid 1px  #e2e2e2" class="stick-header">
   <mat-toolbar-row class="container">
     <div style="border-right: solid 1px black; cursor: pointer;" (click)="onClickToHome()">
-      <img style="width: 25px;margin-right: 10px;position: relative;top: 2px" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548819371/web-sharing/logo.png">
+      <img style="width: 25px;margin-right: 10px;position: relative;top: 2px"
+        src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548819371/web-sharing/logo.png">
     </div>
     <div (click)="onClickToHome()" style="cursor: pointer;">
-      <img style="width: 100px;margin-left: 10px" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548819374/web-sharing/font.png">
+      <img style="width: 100px;margin-left: 10px"
+        src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548819374/web-sharing/font.png">
     </div>
     <span class="example-spacer"></span>
     <span class="pointer-heart d-none d-sm-block d-md-block" *ngIf="userAuth" style="position: relative;top: 5px">
-      <img style="width: 25px;margin-right: 5px;position: relative;top: -4px" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908336/web-sharing/icon-heart.png">
+      <img style="width: 25px;margin-right: 5px;position: relative;top: -4px"
+        src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908336/web-sharing/icon-heart.png">
       <span class="favoriteX">x </span>
       <span class="favoriteNumber">123</span>
     </span>
@@ -26,5 +29,15 @@
         <span>ออกจากระบบ</span>
       </button>
     </mat-menu>
+
+    <span *ngIf="!userAuth" class="register-style pr-1" (click)="openRegister()">
+      สมัครสมาชิก
+    </span>
+    <span *ngIf="!userAuth">
+      |
+    </span>
+    <span *ngIf="!userAuth" class="login-style pl-1" (click)="openLogin()">
+      เข้าสู่ระบบ
+    </span>
   </mat-toolbar-row>
 </mat-toolbar>
