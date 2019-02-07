@@ -1,10 +1,8 @@
 <div class="row pt-3">
   <div class="col">
-    <h5 name="h5Header">ข้อมูลผู้ใช้</h5>
+    <h5 name="h5Header">แก้ไขข้อมูลผู้ใช้</h5>
   </div>
 </div>
-
-
 
 <div class="row pt-3 pl-3">
 
@@ -18,11 +16,9 @@
   </div>
 </div>
 
-
-
 <div class="row pt-3 pl-3">
   <div class="col-3 col-md-2">
-    <p style="margin-top: 16px">ชื่อผู้ใช้<span class="red-color">*</span></p>
+    <p style="margin-top: 16px">ชื่อผู้ใช้ <span class="red-color">*</span></p>
   </div>
   <div class="col-6">
     <mat-form-field class="full-width">
@@ -33,7 +29,7 @@
 
 <div class="row pt-3 pl-3">
   <div class="col-3 col-md-2">
-    <p style="margin-top: 16px">อีเมลล์<span class="red-color">*</span></p>
+    <p style="margin-top: 16px">อีเมลล์ <span class="red-color">*</span></p>
   </div>
   <div class="col-6">
     <mat-form-field class="full-width">
@@ -64,7 +60,7 @@
     </div>
 
     <div  class="col-12 col-md-2 mt-3">
-      <button  mat-stroked-button class="full-width" >ยกเลิก</button>
+      <button  mat-stroked-button class="full-width" (click)="onCancelEdit()">ยกเลิก</button>
     </div>
     <div class="col-4"></div>
   </div>

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -17,16 +18,25 @@ export class EditprofileComponent implements OnInit {
     {
       value: 'L'
     },
-    {
-      value: 'XL'
-    },
+    
     
   ];
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    
+  ) { }
+
+
 
   ngOnInit() {
     window.scrollTo(0, 0);
   }
+
+  onCancelEdit() {
+    this.router.navigate(['/profile']);
+  }
+
+
 
 }
