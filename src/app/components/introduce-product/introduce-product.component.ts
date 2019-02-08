@@ -27,7 +27,7 @@ export class IntroduceProductComponent implements OnInit {
   async getDonate() {
     try {
       this.data = await this.donateService.getDonate();
-      console.log(this.data)
+      // console.log(this.data)
       this.spinner.hide();
     } catch (error) {
       this.spinner.hide();

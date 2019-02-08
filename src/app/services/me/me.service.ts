@@ -22,6 +22,10 @@ export class MeService {
     return this.http.get(environment.apiUrl + '/api/me', { headers: this.authorizationHeader() }).toPromise();
   }
 
+  editProfile(body) {
+    return this.http.put(environment.apiUrl + '/api/me', body, { headers: this.authorizationHeader() }).toPromise();
+  }
+
 
 
 

@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
 
     this.userAuth.isLoggedFail.subscribe(error => {
       this.spinner.hide();
-      console.log(error);
+      // console.log(error);
     });
     if (this.userAuth.user) {
       this.router.navigate(["/home"]);
@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
     this.spinner.show();
     try {
       const res: any = await this.userAuth.register(this.register)
-      console.log(res)
+      // console.log(res)
       if (res && res.status === 200) {
         this.snackBar.open('สมัครสมาชิกสำเร็จ', '', {
           duration: 3000,

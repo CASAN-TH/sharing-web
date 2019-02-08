@@ -15,12 +15,20 @@
       <span class="favoriteX">x </span>
       <span class="favoriteNumber">123</span>
     </span>
-    <span class="profile" *ngIf="userAuth" style="position: relative;top: 5px" (click)="openProfile()">
+    <span class="profile " *ngIf="userAuth" style="position: relative;top: 5px" (click)="openProfile()">
       <!-- <img [src]="userAuth.profileImageURL" class="img" alt="img"> -->
-      <img src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908205/web-sharing/no-image-user.jpg" class="img"
-        alt="img">
-      <span class="user-name">{{userAuth.username}}</span>
+      <span class="user-name d-none d-sm-block d-md-block">
+        <img src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908205/web-sharing/no-image-user.jpg"
+          class="img" style="margin-right: 5px;">
+        {{userAuth.username}}
+      </span>
+      <span class="d-block d-sm-none d-md-none" style="margin-top: 2px">
+        <!-- <img src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908205/web-sharing/no-image-user.jpg"
+          class="img"> -->
+        <span class="user-name">{{userAuth.username}}</span>
+      </span>
     </span>
+
     <span class="pointer" *ngIf="userAuth" [matMenuTriggerFor]="logout" style="position: relative;top: 5px">
       <mat-icon class="position-icon">power_settings_new</mat-icon>
     </span>

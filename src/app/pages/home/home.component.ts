@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
     try {
       window.scrollTo(0, 0);
       this.user = await this.meService.getProfile();
-      console.log(this.user);
+      // console.log(this.user);
       this.userSize = this.user.data.ref1
       this.getDonateBySize();
     } catch (error) {
@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
         keyword: this.search.keyword
       }
       this.bySize = await this.donateService.getDonateBySize(body);
-      console.log(this.bySize)
+      // console.log(this.bySize)
       this.spinner.hide();
     } catch (error) {
       this.spinner.hide();

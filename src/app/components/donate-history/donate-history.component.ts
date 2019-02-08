@@ -34,7 +34,7 @@ export class DonateHistoryComponent implements OnInit {
   async getUser() {
     const res: any = await this.meService.getProfile();
     this.user = res.data
-    console.log(this.user);
+    // console.log(this.user);
     this.getHistoryByUser();
   }
 
@@ -45,7 +45,7 @@ export class DonateHistoryComponent implements OnInit {
     }
     const res: any = await this.historyService.getHistoryByUser(body);
     this.donateByUser = res.data
-    console.log(this.donateByUser);
+    // console.log(this.donateByUser);
     this.getHistoryByDonator();
   }
 
@@ -55,7 +55,7 @@ export class DonateHistoryComponent implements OnInit {
     }
     const res: any = await this.historyService.getHistoryByDonator(body);
     this.donateByDonator = res.data
-    console.log(this.donateByDonator);
+    // console.log(this.donateByDonator);
     this.getHistoryByReceiver();
   }
 
@@ -65,7 +65,7 @@ export class DonateHistoryComponent implements OnInit {
     }
     const res: any = await this.historyService.getHistoryByReceiver(body);
     this.donateByReceiver = res.data
-    console.log(this.donateByReceiver);
+    // console.log(this.donateByReceiver);
     this.spinner.hide();
   }
 
