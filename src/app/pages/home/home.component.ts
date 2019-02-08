@@ -47,10 +47,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  searchData(keyword){
-    console.log(this.search.keyword)
-  }
-
   async getUser() {
     try {
       window.scrollTo(0, 0);
@@ -68,7 +64,7 @@ export class HomeComponent implements OnInit {
     try {
       let body = {
         size: this.userSize,
-        keyword: ''
+        keyword: this.search.keyword
       }
       this.bySize = await this.donateService.getDonateBySize(body);
       console.log(this.bySize)
