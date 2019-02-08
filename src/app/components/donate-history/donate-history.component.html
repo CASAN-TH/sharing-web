@@ -2,7 +2,7 @@
   <div class="col-12">
     <mat-tab-group>
       <mat-tab label="ทั้งหมด" *ngIf="donateByUser">
-        <div class="row bg-tab-list">
+        <div class="row bg-tab-list border-bottom">
           <div class="col-3 pl-0"></div>
           <div class="col-5 text-center">
             <p class="mt-3 text-overflow">ชื่อ</p>
@@ -23,8 +23,8 @@
           <div class="col-2 text-center">
             <p class="mt-3 mb-0 font-green" *ngIf="item.status">ยังไม่ถูกรับ</p>
             <p class="mt-3 mb-0 font-red" *ngIf="!item.status">ถูกรับไปเเล้ว</p>
-            <p class="font-remark" *ngIf="user._id === item.donator">(เป็นคนให้)</p>
-            <p class="font-remark" *ngIf="user._id === item.receiver">(เป็นคนรับ)</p>
+            <p class="font-remark" *ngIf="user._id === item.donator">(คนให้)</p>
+            <p class="font-remark" *ngIf="user._id === item.receiver">(คนรับ)</p>
           </div>
           <div class="col-2">
             <button mat-stroked-button class="btn-style mt-3" (click)="onDonateDetail(item)">ข้อมูล</button>
@@ -33,7 +33,7 @@
       </mat-tab>
 
       <mat-tab label="การให้" *ngIf="donateByDonator">
-        <div class="row bg-tab-list">
+        <div class="row bg-tab-list border-bottom">
           <div class="col-3 pl-0"></div>
           <div class="col-5">
             <p class="mt-3  text-center">ชื่อ</p>
@@ -54,8 +54,8 @@
           <div class="col-2 text-center">
             <p class="mt-3 mb-0 font-green" *ngIf="item.status">ยังไม่ถูกรับ</p>
             <p class="mt-3 mb-0 font-red" *ngIf="!item.status">ถูกรับไปเเล้ว</p>
-            <p class="font-remark" *ngIf="user._id === item.donator">(เป็นคนให้)</p>
-            <p class="font-remark" *ngIf="user._id === item.receiver">(เป็นคนรับ)</p>
+            <p class="font-remark" *ngIf="user._id === item.donator">(คนให้)</p>
+            <p class="font-remark" *ngIf="user._id === item.receiver">(คนรับ)</p>
           </div>
           <div class="col-2">
             <button mat-stroked-button class="btn-style mt-3" (click)="onDonateDetail(item)">ข้อมูล</button>
@@ -64,7 +64,7 @@
       </mat-tab>
 
       <mat-tab label="การรับ" *ngIf="donateByReceiver">
-        <div class="row bg-tab-list">
+        <div class="row bg-tab-list border-bottom">
           <div class="col-3 pl-0"></div>
           <div class="col-5 text-center">
             <p class="mt-3">ชื่อ</p>
@@ -85,8 +85,8 @@
           <div class="col-2 text-center">
             <p class="mt-3 mb-0 font-green" *ngIf="item.status">ยังไม่ถูกรับ</p>
             <p class="mt-3 mb-0 font-red" *ngIf="!item.status">ถูกรับไปเเล้ว</p>
-            <p class="font-remark" *ngIf="user._id === item.donator">(เป็นคนให้)</p>
-            <p class="font-remark" *ngIf="user._id === item.receiver">(เป็นคนรับ)</p>
+            <p class="font-remark" *ngIf="user._id === item.donator">(คนให้)</p>
+            <p class="font-remark" *ngIf="user._id === item.receiver">(คนรับ)</p>
           </div>
           <div class="col-2">
             <button mat-stroked-button class="btn-style mt-3" (click)="onDonateDetail(item)">ข้อมูล</button>

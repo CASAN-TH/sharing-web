@@ -44,7 +44,7 @@ export class DonateDetailComponent implements OnInit {
     try {
       this.data = await this.donateDetailService.getDetail(idProd);
       this.imageArray = this.data.data.image;
-      console.log(this.data);
+      // console.log(this.data);
       this.spinner.hide();
     } catch (error) {
       this.spinner.hide();
@@ -61,7 +61,7 @@ export class DonateDetailComponent implements OnInit {
     this.spinner.show();
     try {
       const res: any = await this.donateDetailService.updateStatus(body);
-      console.log(res);
+      // console.log(res);
       // this.router.navigate(['home']);
       this.dialogRef.close('confirm');
     } catch (error) {
