@@ -1,3 +1,4 @@
+import { MeService } from 'src/app/services/me/me.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -22,15 +23,29 @@ export class EditprofileComponent implements OnInit {
     
   ];
 
+  data: any;
+
   constructor(
     private router: Router,
+    private meService: MeService
     
   ) { }
 
 
-
   ngOnInit() {
     window.scrollTo(0, 0);
+    this.getProfile();
+  }
+
+  async getProfile() {
+    let res: any = await this.meService.getProfile();
+    console.log(res);
+    this.data = res.data;
+  }
+
+  getNewSize(i) {
+    // console.log(i);
+    this.data.size = i
   }
 
   onCancelEdit() {
