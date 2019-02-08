@@ -23,7 +23,7 @@ export class HeaderToolbarComponent implements OnInit {
   }
   onLogout() {
     this.userAuthSrv.logout();
-    this.router.navigate(["/login"]);
+    this.router.navigate(["/introduce"]);
   }
 
   onClickToHome() {
