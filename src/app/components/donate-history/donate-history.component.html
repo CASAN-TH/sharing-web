@@ -14,13 +14,13 @@
         </div>
 
         <div class="row pt-2 pb-2 border-bottom" *ngFor="let item of donateByUser">
-          <div class="col-3 text-center">
+          <div class="col-4 col-sm-3 col-md-3 text-center">
             <img class="img-style" [src]="item.image[0].url">
           </div>
-          <div class="col-5 col-sm-5 col-md-5 d-none d-sm-block d-md-block text-center">
+          <div class="col-5 col-sm-5 col-md-5 d-none d-sm-block d-md-block text-center text-overflow">
             <p class="mt-3">{{item.name}}</p>
           </div>
-          <div class="col-5 col-xs-5 col-sm-5 col-md-5 d-block d-sm-none d-md-none text-center">
+          <div class="col-5 col-xs-5 col-sm-5 col-md-5 d-block d-sm-none d-md-none text-center text-overflow">
             <p class="mt-3 mb-0">{{item.name}}</p>
             <p class="mb-0 font-green" *ngIf="item.status">ยังไม่ถูกรับ</p>
             <p class="mb-0 font-red" *ngIf="!item.status">ถูกรับไปเเล้ว</p>
@@ -52,20 +52,20 @@
         </div>
 
         <div class="row pt-2 pb-2 border-bottom" *ngFor="let item of donateByDonator">
-          <div class="col-3 text-center">
+          <div class="col-4 col-sm-3 col-md-3 text-center">
             <img class="img-style" [src]="item.image[0].url">
           </div>
           <div class="col-5 col-sm-5 col-md-5 d-none d-sm-block d-md-block text-center">
             <p class="mt-3 ">{{item.name}}</p>
           </div>
-          <div class="col-5 col-xs-5 col-sm-5 col-md-5 d-block d-sm-none d-md-none text-center">
-              <p class="mt-3 mb-0">{{item.name}}</p>
-              <p class="mb-0 font-green" *ngIf="item.status">ยังไม่ถูกรับ</p>
-              <p class="mb-0 font-red" *ngIf="!item.status">ถูกรับไปเเล้ว</p>
-              <p class="font-remark" *ngIf="user._id === item.donator">(คนให้)</p>
-              <p class="font-remark" *ngIf="user._id === item.receiver">(คนรับ)</p>
-            </div>
-          <div class="col-2 col-sm-2 col-md-2 d-none d-sm-block d-md-block text-center">
+          <div class="col-5 col-xs-5 col-sm-5 col-md-5 d-block d-sm-none d-md-none text-center text-overflow">
+            <p class="mt-3 mb-0">{{item.name}}</p>
+            <p class="mb-0 font-green" *ngIf="item.status">ยังไม่ถูกรับ</p>
+            <p class="mb-0 font-red" *ngIf="!item.status">ถูกรับไปเเล้ว</p>
+            <p class="font-remark" *ngIf="user._id === item.donator">(คนให้)</p>
+            <p class="font-remark" *ngIf="user._id === item.receiver">(คนรับ)</p>
+          </div>
+          <div class="col-2 col-sm-2 col-md-2 d-none d-sm-block d-md-block text-center text-overflow">
             <p class="mt-3 mb-0 font-green" *ngIf="item.status">ยังไม่ถูกรับ</p>
             <p class="mt-3 mb-0 font-red" *ngIf="!item.status">ถูกรับไปเเล้ว</p>
             <p class="font-remark" *ngIf="user._id === item.donator">(คนให้)</p>
@@ -90,19 +90,19 @@
         </div>
 
         <div class="row pt-2 pb-2 border-bottom" *ngFor="let item of donateByReceiver">
-          <div class="col-3 text-center">
+          <div class="col-4 col-sm-3 col-md-3 text-center">
             <img class="img-style" [src]="item.image[0].url">
           </div>
-          <div class="col-5 col-sm-5 col-md-5 d-none d-sm-block d-md-block text-center">
+          <div class="col-5 col-sm-5 col-md-5 d-none d-sm-block d-md-block text-center text-overflow">
             <p class="mt-3">{{item.name}}</p>
           </div>
-          <div class="col-5 col-xs-5 col-sm-5 col-md-5 d-block d-sm-none d-md-none text-center">
-              <p class="mt-3 mb-0">{{item.name}}</p>
-              <p class="mb-0 font-green" *ngIf="item.status">ยังไม่ถูกรับ</p>
-              <p class="mb-0 font-red" *ngIf="!item.status">ถูกรับไปเเล้ว</p>
-              <p class="font-remark" *ngIf="user._id === item.donator">(คนให้)</p>
-              <p class="font-remark" *ngIf="user._id === item.receiver">(คนรับ)</p>
-            </div>
+          <div class="col-5 col-xs-5 col-sm-5 col-md-5 d-block d-sm-none d-md-none text-center text-overflow">
+            <p class="mt-3 mb-0">{{item.name}}</p>
+            <p class="mb-0 font-green" *ngIf="item.status">ยังไม่ถูกรับ</p>
+            <p class="mb-0 font-red" *ngIf="!item.status">ถูกรับไปเเล้ว</p>
+            <p class="font-remark" *ngIf="user._id === item.donator">(คนให้)</p>
+            <p class="font-remark" *ngIf="user._id === item.receiver">(คนรับ)</p>
+          </div>
           <div class="col-2 col-sm-2 col-md-2 d-none d-sm-block d-md-block text-center">
             <p class="mt-3 mb-0 font-green" *ngIf="item.status">ยังไม่ถูกรับ</p>
             <p class="mt-3 mb-0 font-red" *ngIf="!item.status">ถูกรับไปเเล้ว</p>

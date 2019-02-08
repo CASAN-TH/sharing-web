@@ -72,3 +72,9 @@
     top: 0px;
     z-index: 2;
 }
+
+.text-overflow {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
