@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
   }
 
   searchData(keyword){
-    console.log(keyword)
+    console.log(this.search.keyword)
   }
 
   async getUser() {
@@ -67,7 +67,8 @@ export class HomeComponent implements OnInit {
   async getDonateBySize() {
     try {
       let body = {
-        size: this.userSize
+        size: this.userSize,
+        keyword: ''
       }
       this.bySize = await this.donateService.getDonateBySize(body);
       console.log(this.bySize)
