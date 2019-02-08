@@ -9,13 +9,13 @@ export class IntroduceComponent implements OnInit {
 
   images: any = [
     {
-        "url": "http://www.toysmile.com/media/catalog/product/cache/1/image/5dbab2e28bc9b44f677294c6401487eb/d/-/d-va-hoodie-07.jpg"
+        "url": "https://cdn.pixabay.com/photo/2017/01/26/23/48/love-2011994_1280.png"
     },
     {
-        "url": "http://fixtoys.net/upload/OVW%200041%20001.jpg"
+        "url": "https://image.shutterstock.com/z/stock-photo-group-portrait-of-two-white-caucasian-cute-adorable-funny-children-toddlers-sitting-together-617915693.jpg"
     },
     {
-        "url": "http://www.toysmile.com/media/catalog/product/cache/1/image/5dbab2e28bc9b44f677294c6401487eb/d/-/d-va-dress-cosplay-03.jpg"
+        "url": "https://cdn.pixabay.com/photo/2015/09/10/16/19/alive-934671_1280.jpg"
     }
 ]
 
