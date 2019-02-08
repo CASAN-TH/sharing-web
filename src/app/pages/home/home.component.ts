@@ -101,10 +101,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/info-donate']);
   }
 
-  onDonateDetail(item) {
-    console.log(item)
-    this.router.navigate(['donate-detail'], { queryParams: { id: item._id, user_id: this.user.data._id } });
-  }
+  // onDonateDetail(item) {
+  //   console.log(item)
+  //   this.router.navigate(['donate-detail'], { queryParams: { id: item._id, user_id: this.user.data._id } });
+  // }
 
   onModalDetail(item) {
     const dialogRef = this.dialog.open(DonateDetailComponent, {
