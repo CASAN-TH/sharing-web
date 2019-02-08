@@ -19,6 +19,9 @@ export class EditprofileComponent implements OnInit {
     {
       value: 'L'
     },
+    {
+    value: 'XL'
+    }
     
     
   ];
@@ -44,7 +47,7 @@ export class EditprofileComponent implements OnInit {
   }
 
   getNewSize(i) {
-    // console.log(i);
+    console.log(i);
     this.data.size = i
   }
 
