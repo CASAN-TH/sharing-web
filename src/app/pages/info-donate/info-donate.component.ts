@@ -65,11 +65,11 @@ export class InfoDonateComponent implements OnInit {
   async getUser() {
     window.scrollTo(0, 0);
     this.user = await this.meService.getProfile();
-    console.log(this.user.data._id);
+    // console.log(this.user.data._id);
   };
 
   async onSaveDonate() {
-    console.log('asd');
+    // console.log('asd');
     let body = {
       name: this.data.name,
       size: this.data.size,
@@ -77,10 +77,10 @@ export class InfoDonateComponent implements OnInit {
       image: this.images,
       donator: this.user.data._id
     }
-    console.log(body);
+    // console.log(body);
     let res = await this.InfoDonateService.saveDonate(body);
     this.router.navigate(['/home']);
-    console.log(res);
+    // console.log(res);
   }
 
   onCancel() {
@@ -113,7 +113,7 @@ export class InfoDonateComponent implements OnInit {
         this.images.push({
           url: url
         });
-        console.log(this.images);
+        // console.log(this.images);
         this.spinner.hide();
       });
     });
@@ -131,7 +131,7 @@ export class InfoDonateComponent implements OnInit {
         this.spinner.show();
         try {
           this.images.splice(index, 1);
-          console.log(this.images);
+          // console.log(this.images);
           this.spinner.hide();
         } catch (error) {
           this.spinner.hide();

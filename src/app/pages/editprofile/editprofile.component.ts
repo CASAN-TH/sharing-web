@@ -43,13 +43,13 @@ export class EditprofileComponent implements OnInit {
 
   async getProfile() {
     let res: any = await this.meService.getProfile();
-    console.log(res);
+    // console.log(res);
     this.data = res.data;
     this.spinner.hide();
   }
 
   getSize(i) {
-    console.log(i);
+    // console.log(i);
     this.data.size = i
   }
 
@@ -60,13 +60,13 @@ export class EditprofileComponent implements OnInit {
       email: this.data.email,
       ref1: this.data.ref1
     }
-    console.log(body);
+    // console.log(body);
     try {
       const res: any = await this.meService.editProfile(body);
-      console.log(res);
+      // console.log(res);
       this.router.navigate(['/home']);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }
 
