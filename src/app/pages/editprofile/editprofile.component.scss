@@ -3,7 +3,7 @@
 }
 
 .full-width {
-    width: 100%;
+    width: 100% !important;
 }
 
 .red-color {
@@ -15,11 +15,8 @@
     max-width: 500px;
     width: 100%;
   }
-  
-  .example-full-width {
-    width: 100%;
-  }
 
   .color-btn{
     background-color: white;
+    border: solid 1px #7a7a7a;
   }

@@ -23,8 +23,6 @@ export class EditprofileComponent implements OnInit {
     {
       value: 'XL'
     }
-
-
   ];
 
   data: any;
@@ -49,8 +47,9 @@ export class EditprofileComponent implements OnInit {
     this.data = res.data;
     this.spinner.hide();
   }
+
   getSize(i) {
-    // console.log(i);
+    console.log(i);
     this.data.size = i
   }
 
