@@ -30,6 +30,7 @@ export class DonateDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.modalData);
     setTimeout(() => {
       this.spinner.show();
     }, 5);

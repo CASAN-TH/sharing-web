@@ -7,11 +7,12 @@
       <img name="donateDetailImageSingle" *ngFor="let item of imageArray" [src]="item.url" class="image-size">
     </div>
     <div name="divDonateDetailNoImage" class="image-container" *ngIf="imageArray && imageArray.length === 0">
-      <img name="donateDetailNoImage" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548731775/web-sharing/no-image.png"
-        class="image-size">
+      <img name="donateDetailNoImage"
+        src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548731775/web-sharing/no-image.png" class="image-size">
     </div>
   </div>
-  <div name="divDonateDetailData" class="col-12 col-sm-12 col-md-12 col-lg-6 mt-3" *ngIf="data && data.data && data.data.detail">
+  <div name="divDonateDetailData" class="col-12 col-sm-12 col-md-12 col-lg-6 mt-3"
+    *ngIf="data && data.data && data.data.detail">
     <!-- <h2 name="h2DonateDetailName">
       {{data.data.name}}
     </h2> -->
@@ -52,7 +53,8 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <button name="btnDonateDetailAccept" mat-raised-button color="primary" class="text-center btn-size margin-top"
-          (click)="onAcceptDonate()" [disabled]="data.data.status === false">รับสินค้า</button>
+          (click)="onAcceptDonate()"
+          [disabled]="data.data.status === false || data.data.donator === modalData.user_id">รับสินค้า</button>
       </div>
       <div class="col-12 col-md-6">
         <button mat-stroked-button class="text-center btn-size margin-top btn-size" (click)="onCancel()">ยกเลิก</button>

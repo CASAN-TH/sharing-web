@@ -18,7 +18,7 @@ export class UserProfileComponent implements OnInit {
 
   async ngOnInit() {
     let res: any = await this.meService.getProfile();
-    console.log(res);
+    // console.log(res);
     this.data = res.data;
   }
 
