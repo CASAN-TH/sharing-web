@@ -75,6 +75,21 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  async searchData(){
+    this.spinner.show();
+    try {
+      let body = {
+        size: this.userSize,
+        keyword: this.search.keyword
+      }
+      this.bySize = await this.donateService.getDonateBySize(body);
+      this.spinner.hide();
+    } catch (error) {
+      this.spinner.hide();
+      throw error
+    }
+  }
+
   // async getDonate() {
   //   if (this.afterClosed) {
   //     this.spinner.show();
