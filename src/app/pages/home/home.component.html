@@ -3,7 +3,7 @@
         <div name="divCol61" class="col-10 ">
             <mat-form-field style="width: 50%" class="example-form-field">
                 <span matPrefix style="position: relative;top: -3px;">ค้นหา : &nbsp;</span>
-                <input matInput type="text" class="height-input" [(ngModel)]="search.keyword" (ngModelChange)="searchData(search.keyword)">
+                <input matInput type="text" class="height-input" [(ngModel)]="search.keyword" (ngModelChange)="getDonateBySize()">
                 <mat-icon matSuffix>search</mat-icon>
             </mat-form-field>
         </div>
