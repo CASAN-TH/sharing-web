@@ -17,9 +17,9 @@
     </span>
     <span class="profile" *ngIf="userAuth" style="position: relative;top: 5px" (click)="openProfile()">
       <!-- <img [src]="userAuth.profileImageURL" class="img" alt="img"> -->
-      <img src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908205/web-sharing/no-image-user.jpg" class="img"
+      <img  src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908205/web-sharing/no-image-user.jpg" class="img"
         alt="img">
-      <span class="user-name">{{userAuth.username}}</span>
+      <span class="user-name d-none d-sm-block d-md-block">{{userAuth.username}}</span>
     </span>
     <span class="pointer" *ngIf="userAuth" [matMenuTriggerFor]="logout" style="position: relative;top: 5px">
       <mat-icon class="position-icon">power_settings_new</mat-icon>

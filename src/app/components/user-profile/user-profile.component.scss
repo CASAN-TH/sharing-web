@@ -11,3 +11,9 @@
     background-color: white;
     border: solid 1px #7a7a7a;
 }
+
+.text-overflow {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

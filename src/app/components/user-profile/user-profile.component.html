@@ -1,5 +1,5 @@
 <div class="row pt-3 pb-3" style="border: solid 1px lightgray;border-radius: 2%;">
-  <div class="col-1 pr-0 text-center">
+  <div class="col-2 col-xs-2 col-sm-1 col-md-1 pr-0 text-center">
     <p class="margin-icon">
       <mat-icon>people</mat-icon>
     </p>
@@ -10,7 +10,7 @@
       <mat-icon>info</mat-icon>
     </p>
   </div>
-  <div class="col-7 pl-0" *ngIf="data">
+  <div class="col-6 col-xs-6 col-sm-7 col-md-7 pl-0 text-overflow" *ngIf="data">
     <p>
       <span>ชื่อ: </span> <span class="mr-2">{{data.firstname}}</span> <span>{{data.lastname}}</span>
     </p>
@@ -22,6 +22,6 @@
     </p>
   </div>
   <div class="col-4 text-right">
-    <button mat-stroked-button class="btn-style" (click)="onClickToEdit()">เเก้ไขโปรไฟล์</button>
+    <button mat-stroked-button class="btn-style" (click)="onClickToEdit()">เเก้ไข</button>
   </div>
 </div>
