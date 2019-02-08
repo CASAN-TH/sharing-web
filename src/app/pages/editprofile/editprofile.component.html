@@ -51,21 +51,21 @@
 
   <form class="example-form">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="ชื่อ" value={{data.displayname}}>
+      <input matInput placeholder="ชื่อ - นามสกุล" value={{data.displayname}}>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width pt-3">
       <input matInput placeholder="ชื่อผู้ใช้" value={{data.username}}>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width pt-3">
       <input matInput placeholder="อีเมลล์" value={{data.email}}>
     </mat-form-field>
     <div>
-        <p  style="margin-top: 16px">ขนาดปัจจุบัน :  <span class="red-color">{{data.ref1}}</span></p>
+        <p class="pt-3">ขนาดปัจจุบัน :  <span class="red-color">{{data.ref1}}</span></p>
       </div>
 
     <div class="row pt-3 pl-3">
         <div >
-          <p style="margin-top: 16px">เเก้ไขขนาด : </p>
+          <p>เเก้ไขขนาด : </p>
         </div>
         <div class="col-6">
           <mat-form-field>
