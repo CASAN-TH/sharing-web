@@ -52,12 +52,12 @@
     </div>
     <div class="row">
       <div class="col-12 col-md-6">
-        <button name="btnDonateDetailAccept" mat-raised-button color="primary" class="text-center btn-size margin-top"
+        <button name="btnDonateDetailAccept" mat-stroked-button class="text-center btn-size margin-top btn-style"
           (click)="onAcceptDonate()"
           [disabled]="data.data.status === false || data.data.donator === modalData.user_id">รับสินค้า</button>
       </div>
       <div class="col-12 col-md-6">
-        <button mat-stroked-button class="text-center btn-size margin-top btn-size" (click)="onCancel()">ยกเลิก</button>
+        <button mat-stroked-button class="text-center btn-size margin-top btn-size btn-cancel-style" (click)="onCancel()">ยกเลิก</button>
       </div>
     </div>
   </div>

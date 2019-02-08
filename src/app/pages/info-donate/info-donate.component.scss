@@ -9,6 +9,11 @@
     justify-content: center;
 }
 
+.btn-style{
+    border: solid 1px #7a7a7a;
+    background-color: white;
+}
+
 .icon-upload-img{
    font-size: 50px;
 }
@@ -44,13 +49,19 @@
 .remove {
     width: 40px;
     height: 40px;
-    background:#283593;
+    border: solid 1px #7a7a7a;
+    background-color: white;
     text-align: center;
     border-radius: 50%;
     padding-top: 6px;
-    color: #ffffff;
+    color: black;
     cursor: pointer;
     position: absolute;
     right: 16px;
     margin-top: 10px;
+}
+
+.remove-shadow{
+    transition: none !important;
+    box-shadow: none !important;
 }

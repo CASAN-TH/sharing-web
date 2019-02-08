@@ -47,7 +47,56 @@
     </div>
   </div> -->
 
-<div class="row pt-5 pl-3" *ngIf="data">
+
+<div class="row">
+  <div class="col-3 col-md-2">
+    <p name="pName" style="margin-top: 16px" class="pl-3">ชื่อ <span class="red-color">*</span></p>
+  </div>
+  <div class="col-9 col-sm-6 col-md-6" *ngIf="data && data.firstname">
+    <mat-form-field name="mffInputName" class="full-width">
+      <input matInput [(ngModel)]="data.firstname">
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3 col-md-2">
+    <p name="pName" style="margin-top: 16px" class="pl-3">นามสกุล <span class="red-color">*</span></p>
+  </div>
+  <div class="col-9 col-sm-6 col-md-6" *ngIf="data && data.lastname">
+    <mat-form-field name="mffInputName" class="full-width">
+      <input matInput [(ngModel)]="data.lastname">
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3 col-md-2">
+    <p name="pName" style="margin-top: 16px" class="pl-3">อีเมลล์ <span class="red-color">*</span></p>
+  </div>
+  <div class="col-9 col-sm-6 col-md-6" *ngIf="data && data.email">
+    <mat-form-field name="mffInputName" class="full-width">
+      <input matInput [(ngModel)]="data.email">
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3 col-md-2">
+    <p name="pName" style="margin-top: 16px" class="pl-3">ขนาดเสื้อ <span class="red-color">*</span></p>
+  </div>
+  <div class="col-9 col-sm-6 col-md-6" *ngIf="data && data.ref1">
+    <mat-form-field name="mffSize">
+      <mat-select name="selectSize" [(ngModel)]="data.ref1">
+        <mat-option name="optionSize" *ngFor="let item of size" [value]="item.value" (click)="getSize(item.value)">
+          {{item.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<!-- <div class="row pt-5 pl-3" *ngIf="data">
 
   <form class="example-form">
     <mat-form-field class="example-full-width">
@@ -60,39 +109,31 @@
       <input matInput placeholder="อีเมลล์" value={{data.email}}>
     </mat-form-field>
     <div>
-        <p  style="margin-top: 16px">ขนาดปัจจุบัน :  <span class="red-color">{{data.ref1}}</span></p>
-      </div>
+      <p style="margin-top: 16px">ขนาดปัจจุบัน : <span class="red-color">{{data.ref1}}</span></p>
+    </div>
 
     <div class="row pt-3 pl-3">
-        <div >
-          <p style="margin-top: 16px">เเก้ไขขนาด : </p>
-        </div>
-        <div class="col-6">
-          <mat-form-field>
-            <mat-select>
-              <mat-option *ngFor="let item of size" [value]="item.value" (click)="getNewSize(item.value)">
-                {{item.value}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
+      <div>
+        <p style="margin-top: 16px">เเก้ไขขนาด : </p>
       </div>
+      <div class="col-6">
+        <mat-form-field>
+          <mat-select>
+            <mat-option *ngFor="let item of size" [value]="item.value" (click)="getNewSize(item.value)">
+              {{item.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
 
   </form>
-
-
-
-
-
-
-</div>
-
-
+</div> -->
 
 <div class="row">
   <div class="col-4"></div>
   <div class="col-12 col-md-2 mt-3">
-    <button name="btnSave" mat-flat-button class="full-width" color="primary">บันทึก</button>
+    <button name="btnSave" mat-stroked-button class="full-width color-btn" (click)="onSaveEdit()">บันทึก</button>
   </div>
 
   <div class="col-12 col-md-2 mt-3">

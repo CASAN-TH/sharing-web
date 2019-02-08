@@ -9,8 +9,8 @@
     <div name="
     divBtnUploadImg" class="border-upload-img center full-width">
       <!-- <mat-icon style="font-size: 220%">add</mat-icon> -->
-      <button name="btnUploadImg" mat-fab color="primary">
-        <mat-icon name="iconUploadImg">add</mat-icon>
+      <button name="btnUploadImg" mat-fab class="btn-style remove-shadow">
+        <mat-icon name="iconUploadImg" style="color: black">add</mat-icon>
       </button>
     </div>
   </div>
@@ -18,16 +18,16 @@
   <div name="divcolImgProd" class="col-12 col-md-3 mt-1 mb-1" *ngFor="let item of images;let i = index">
     <div class="contrain">
       <div class="tools">
-        <div name="buttonDeleteImage" class="remove" (click)="deleteImg(i)">
-          <mat-icon>delete</mat-icon>
+        <div name="buttonDeleteImage" class="remove btn-style " (click)="deleteImg(i)">
+          <mat-icon style="color: black">delete</mat-icon>
         </div>
       </div>
       <img [src]="item.url" alt="image" class="product-img">
     </div>
   </div>
 
-  <input name="productImage" type="file" #productImg accept="image/*" [(ngModel)]="productImgModel" (change)="onProductImgChange($event)"
-    style="visibility: hidden;">
+  <input name="productImage" type="file" #productImg accept="image/*" [(ngModel)]="productImgModel"
+    (change)="onProductImgChange($event)" style="visibility: hidden;">
 </div>
 
 <div name="divRowAllDetail" class="row pt-3">
@@ -42,7 +42,8 @@
   </div>
   <div name="divColInputName" class="col-6">
     <mat-form-field name="mffInputName" class="full-width">
-      <input name="inputName" class="height-input" matInput [(ngModel)]="data.name" placeholder="เพิ่มชื่อสิ่งของทีต้องการบริจาค">
+      <input name="inputName" class="height-input" matInput [(ngModel)]="data.name"
+        placeholder="เพิ่มชื่อสิ่งของทีต้องการบริจาค">
     </mat-form-field>
   </div>
 </div>
@@ -68,7 +69,8 @@
   </div>
   <div name="divColInputDetail" class="col-6">
     <mat-form-field name="mffInputDetail" class="full-width">
-      <textarea name="inputDetail" name="inputDetail" [(ngModel)]="data.detail" matInput placeholder="เพิ่มรายละเอียดการบริจาค, สถานที่นัดรับ"></textarea>
+      <textarea name="inputDetail" name="inputDetail" [(ngModel)]="data.detail" matInput
+        placeholder="เพิ่มรายละเอียดการบริจาค, สถานที่นัดรับ"></textarea>
     </mat-form-field>
   </div>
 </div>
@@ -76,7 +78,8 @@
 <div name="divRowBtn" class="row">
   <div name="divColBlank4" class="col-4"></div>
   <div name="divColBtnSave" class="col-12 col-md-2 mt-3">
-    <button name="btnSave" mat-flat-button (click)="onSaveDonate()" class="full-width" color="primary" [disabled]="!data.name || !data.size || !data.detail || images.length < 1">บันทึก</button>
+    <button name="btnSave" mat-stroked-button (click)="onSaveDonate()" class="full-width btn-style"
+      [disabled]="!data.name || !data.size || !data.detail || images.length < 1">บันทึก</button>
   </div>
   <div name="divColBtnCancel" class="col-12 col-md-2 mt-3">
     <button name="btnCancel" mat-stroked-button class="full-width" (click)="onCancel()">ยกเลิก</button>
