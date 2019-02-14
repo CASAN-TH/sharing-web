@@ -1,4 +1,4 @@
-<div class="row mt-3 mb-3 text-center border" style="border-radius: 2%;">
+<div class="row mt-3 mb-3 text-center border" style="border-radius: 2%;" *ngIf="data">
   <div class="col-4 pt-3">
     <p>ทั้งหมด</p>
   </div>
@@ -10,14 +10,14 @@
   </div>
   <div class="col-4 pb-3">
     <img class="heart-style" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908336/web-sharing/icon-heart.png">
-    <span class="ml-2 pb-3">100</span>
+    <span class="ml-2 pb-3">{{data.refnum1}}</span>
   </div>
   <div class="col-4">
     <img class="heart-style" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908336/web-sharing/icon-heart.png">
-    <span class="ml-2 pb-3">80</span>
+    <span class="ml-2 pb-3">{{data.refnum2}}</span>
   </div>
   <div class="col-4">
     <img class="heart-style" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908336/web-sharing/icon-heart.png">
-    <span class="ml-2">20</span>
+    <span class="ml-2">{{total}}</span>
   </div>
 </div>

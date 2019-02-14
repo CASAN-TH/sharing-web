@@ -34,6 +34,8 @@ export class HeaderToolbarComponent implements OnInit {
 
   }
 
+  
+
   openProfile() {
     this.router.navigate(["profile"]);
   }

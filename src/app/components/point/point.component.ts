@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MeService } from 'src/app/services/me/me.service';
 
 @Component({
   selector: 'app-point',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PointComponent implements OnInit {
 
-  constructor() { }
+  data: any;
+  total: any;
 
-  ngOnInit() {
+  constructor(
+    private meService: MeService
+  ) { }
+
+  async ngOnInit() {
+    let res: any = await this.meService.getProfile();
+    this.data = res.data;
+    this.total = this.data.refnum1-this.data.refnum2;
+    // console.log(this.total)
   }
 
 }
