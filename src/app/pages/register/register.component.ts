@@ -21,7 +21,9 @@ export class RegisterComponent implements OnInit {
     firstname: "",
     lastname: "",
     email: "",
-    ref1: ""
+    ref1: "",
+    refnum1: 0,
+    refnum2: 0
   }
 
   constructor(
@@ -86,7 +88,7 @@ export class RegisterComponent implements OnInit {
             duration: 3000,
           });
         }
-      }  
+      }
     }
   }
 
