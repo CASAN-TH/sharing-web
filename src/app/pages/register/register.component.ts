@@ -22,8 +22,8 @@ export class RegisterComponent implements OnInit {
     lastname: "",
     email: "",
     ref1: "",
-    refnum1: 0,
-    refnum2: 0
+    // refnum1: 0,
+    // refnum2: 0
   }
 
   constructor(
