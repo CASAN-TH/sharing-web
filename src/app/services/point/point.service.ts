@@ -26,4 +26,12 @@ export class PointService {
     return this.http.post(environment.apiUrl + '/api/points-user', body, { headers: this.authorizationHeader() }).toPromise();
   }
 
+  addTotal(body) {
+    return this.http.post(environment.apiUrl + '/api/points-add-total', body, { headers: this.authorizationHeader() }).toPromise();
+  }
+
+  addUsed(body) {
+    return this.http.post(environment.apiUrl + '/api/points-add-used', body, { headers: this.authorizationHeader() }).toPromise();
+  }
+
 }

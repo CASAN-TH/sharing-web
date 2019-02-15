@@ -27,7 +27,7 @@ export class PointComponent implements OnInit {
     this.data = resp.data[0];
     console.log(this.data);
     this.total = this.data.total - this.data.used;
-    // console.log(this.total)
+    console.log(this.total)
   }
 
 }
