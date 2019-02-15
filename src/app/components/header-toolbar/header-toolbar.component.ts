@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { environment } from "src/environments/environment";
 import { Router } from "@angular/router";
 import { AuthService } from "ng6-md-auth";
+import { PointService } from 'src/app/services/point/point.service';
 
 @Component({
   selector: "app-header-toolbar",
@@ -12,9 +13,12 @@ import { AuthService } from "ng6-md-auth";
 export class HeaderToolbarComponent implements OnInit {
   appName = `${environment.appName}`;
   userAuth: any;
+  point: any;
+  remainpoint: any;
   constructor(
     private userAuthSrv: AuthService,
     private router: Router,
+    private pointservice: PointService
   ) {
     this.userAuthSrv.isLoggedIn.subscribe(value => {
       this.userAuth = this.userAuthSrv.user;
@@ -31,10 +35,20 @@ export class HeaderToolbarComponent implements OnInit {
   }
 
   ngOnInit() {
-
+  // console.log(this.userAuth)
+  this.getPoint()
   }
 
-  
+  async getPoint(){
+   let body = {
+     user_id: this.userAuth._id     
+
+  }
+    this.point= await this.pointservice.getPoint(body)
+    console.log(this.point)
+    this.remainpoint = this.point.data[0].total - this.point.data[0].used
+    console.log(this.remainpoint)
+  }
 
   openProfile() {
     this.router.navigate(["profile"]);
