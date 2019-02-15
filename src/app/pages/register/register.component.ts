@@ -40,8 +40,8 @@ export class RegisterComponent implements OnInit {
     this.userAuth.isLoggingIn.subscribe(() => {
 
     });
-    this.userAuth.isLoggedIn.subscribe(async value => {
-      await this.createPoint();
+    this.userAuth.isLoggedIn.subscribe(value => {
+      this.createPoint();
     });
 
     this.userAuth.isLoggedFail.subscribe(error => {
@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit {
 
   async createPoint() {
     const resp: any = await this.meService.getProfile();
-    console.log(resp);
+    // console.log(resp);
     const body = {
       user_id: resp.data._id
     }
@@ -76,7 +76,7 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(["/home"]);
       this.spinner.hide();
     }
-    console.log(respo);
+    // console.log(respo);
   }
 
   async saveRegister() {
