@@ -66,17 +66,23 @@ export class RegisterComponent implements OnInit {
   }
 
   async createPoint() {
-    const resp: any = await this.meService.getProfile();
-    // console.log(resp);
-    const body = {
-      user_id: resp.data._id
-    }
-    const respo: any = await this.pointService.addPoint(body);
-    if (this.userAuth.user) {
-      this.router.navigate(["/home"]);
+    try {
+      const resp: any = await this.meService.getProfile();
+      // console.log(resp);
+      const body = {
+        user_id: resp.data._id
+      }
+      const respo: any = await this.pointService.addPoint(body);
+      if (this.userAuth.user && respo) {
+        this.router.navigate(["/home"]);
+        this.spinner.hide();
+      }
+      // console.log(respo);
+    } catch (error) {
       this.spinner.hide();
+      throw error;
     }
-    // console.log(respo);
+
   }
 
   async saveRegister() {
