@@ -4,6 +4,8 @@ import { AuthService } from "ng6-md-auth";
 import { NgxSpinnerService } from "ngx-spinner";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from "@angular/material";
+import { MeService } from "src/app/services/me/me.service";
+import { PointService } from "src/app/services/point/point.service";
 
 @Component({
   selector: "app-register",
@@ -31,16 +33,15 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private spinner: NgxSpinnerService,
     private formBuilder: FormBuilder,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private meService: MeService,
+    private pointService: PointService,
   ) {
     this.userAuth.isLoggingIn.subscribe(() => {
 
     });
-    this.userAuth.isLoggedIn.subscribe(value => {
-      this.spinner.hide();
-      if (this.userAuth.user) {
-        this.router.navigate(["/home"]);
-      }
+    this.userAuth.isLoggedIn.subscribe(async value => {
+      await this.createPoint();
     });
 
     this.userAuth.isLoggedFail.subscribe(error => {
@@ -64,6 +65,20 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  async createPoint() {
+    const resp: any = await this.meService.getProfile();
+    console.log(resp);
+    const body = {
+      user_id: resp.data._id
+    }
+    const respo: any = await this.pointService.addPoint(body);
+    if (this.userAuth.user) {
+      this.router.navigate(["/home"]);
+      this.spinner.hide();
+    }
+    console.log(respo);
+  }
+
   async saveRegister() {
     this.spinner.show();
     try {
@@ -73,7 +88,7 @@ export class RegisterComponent implements OnInit {
         this.snackBar.open('สมัครสมาชิกสำเร็จ', '', {
           duration: 3000,
         });
-        this.userAuth.onSuccess(res.token)
+        this.userAuth.onSuccess(res.token);
         this.spinner.hide()
       }
     } catch (error) {
