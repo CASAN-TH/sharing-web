@@ -49,7 +49,7 @@ export class HeaderToolbarComponent implements OnInit {
         }
         this.point = await this.pointservice.getPoint(body);
         console.log(this.point)
-        if (!this.point.data.total) {
+        if (!this.point.data[0].total) {
           this.remainpoint = 0;
         } else {
           this.remainpoint = this.point.data[0].total - this.point.data[0].used;
