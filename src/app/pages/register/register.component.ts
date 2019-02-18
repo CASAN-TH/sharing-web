@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
 
     });
     this.userAuth.isLoggedIn.subscribe(value => {
-      this.createPoint();
+
     });
 
     this.userAuth.isLoggedFail.subscribe(error => {
@@ -97,6 +97,7 @@ export class RegisterComponent implements OnInit {
         this.userAuth.onSuccess(res.token);
         this.spinner.hide()
       }
+      this.createPoint();
     } catch (error) {
       if (error) {
         this.spinner.hide()

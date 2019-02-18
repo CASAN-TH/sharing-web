@@ -13,7 +13,7 @@
       <img style="width: 25px;margin-right: 5px;position: relative;top: -4px"
         src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548908336/web-sharing/icon-heart.png">
       <span class="favoriteX">x </span>
-      <span class="favoriteNumber">{{remainpoint}}</span>
+      <span class="favoriteNumber" *ngIf="point">{{remainpoint}}</span>
     </span>
     <span class="profile " *ngIf="userAuth" style="position: relative;top: 5px" (click)="openProfile()">
       <!-- <img [src]="userAuth.profileImageURL" class="img" alt="img"> -->
