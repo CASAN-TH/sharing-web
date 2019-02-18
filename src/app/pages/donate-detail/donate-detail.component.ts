@@ -99,7 +99,8 @@ export class DonateDetailComponent implements OnInit {
         width: '500px',
         data: {
           message: 'ยืนยันการรับบริจาค',
-          warning: 'ในการรับบริจาค หากผู้รับทำการยกเลิกการรับบริจาค ผู้รับจะไม่ได้หัวใจคืนในทุกกรณี กรุณาตรวจสอบให้ดีก่อนทำการรับบริจาค'
+          warning: 'ในการรับบริจาค หากผู้รับทำการยกเลิกการรับบริจาค ผู้รับจะไม่ได้หัวใจคืนในทุกกรณี กรุณาตรวจสอบให้ดีก่อนทำการรับบริจาค',
+          point: this.remainPoint
         }
       });
       dialogRef.afterClosed().subscribe(async result => {

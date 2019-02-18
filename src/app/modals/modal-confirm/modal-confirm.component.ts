@@ -14,6 +14,7 @@ export class ModalConfirmComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.data);
 
   }
   onClickOk() {
@@ -21,7 +22,7 @@ export class ModalConfirmComponent implements OnInit {
   }
 
   onClickCancel() {
-    this.dialog.closeAll();
+    this.thisDialogRef.close('cancel');
   }
 
 }

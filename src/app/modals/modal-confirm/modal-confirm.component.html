@@ -1,10 +1,17 @@
-<div name="divTitleModal" class="mb-4">
+<div name="divTitleModal">
   <div name="colTitleModal" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
-    {{data.message}}
+    <p>{{data.message}} </p>
   </div>
 </div>
 
-<div class="row">
+<div class="row" *ngIf="data && data.point < 1">
+  <div class="col">
+    <p class="warning">ในการรับบริจาคจะต้องมีหัวใจขั้นต่ำ 1 หัวใจ</p>
+    <p class="warning"> หัวใจได้รับจากการบริจาคที่มีผู้รับบริจาคไปเสร็จสมบูรณ์เเล้ว</p>
+  </div>
+</div>
+
+<div class="row" *ngIf="data && data.warning && data.point > 0">
   <div class="col">
     <p class="warning">{{data.warning}}</p>
   </div>
@@ -16,8 +23,8 @@
       <div name="col1ButtonBlank" class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
       </div>
       <div name="col2ButtonConfirm" class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-        <button name="btnConfirmOk" style="width: 100%" class="full-btn margin-top-btn" mat-flat-button color="primary"
-          (click)="onClickOk()">ตกลง</button>
+        <button name="btnConfirmOk" [disabled]="data.point === 0" style="width: 100%" class="full-btn margin-top-btn"
+          mat-flat-button color="primary" (click)="onClickOk()">ตกลง</button>
       </div>
       <div name="col3ButtonCancel" class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
         <button name="btnConfirmCancel" style="width: 100%" class="full-btn margin-top-btn" (click)="onClickCancel()"
