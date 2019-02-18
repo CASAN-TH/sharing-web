@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { PointService } from 'src/app/services/point/point.service';
+import { async } from 'q';
+import { ModalConfirmComponent } from 'src/app/modals/modal-confirm/modal-confirm.component';
 
 
 @Component({
@@ -92,16 +94,31 @@ export class DonateDetailComponent implements OnInit {
       user_id: this.user.data._id,
       bonus: 0
     };
-
-    this.spinner.show();
     try {
-      const res: any = await this.donateDetailService.updateStatus(body);
-      const resTotal: any = await this.pointService.addTotal(body2);
-      const resUserd: any = await this.pointService.addUsed(body3);
-      if(res){
-        this.pointService.updatePoint.emit();
-      }
-      this.dialogRef.close('confirm');
+      const dialogRef = this.dialog.open(ModalConfirmComponent, {
+        width: '500px',
+        data: {
+          message: 'ยืนยันการรับบริจาค',
+          warning: 'ในการรับบริจาค หากผู้รับทำการยกเลิกการรับบริจาค ผู้รับจะไม่ได้หัวใจคืนในทุกกรณี กรุณาตรวจสอบให้ดีก่อนทำการรับบริจาค'
+        }
+      });
+      dialogRef.afterClosed().subscribe(async result => {
+        this.spinner.show();
+        const res = result;
+        if (res === 'confirm') {
+          const resp: any = await this.donateDetailService.updateStatus(body);
+          const resTotal: any = await this.pointService.addTotal(body2);
+          const resUserd: any = await this.pointService.addUsed(body3);
+          if (resp) {
+            this.pointService.updatePoint.emit();
+            this.spinner.hide();
+          }
+          this.dialogRef.close('confirm');
+        } else {
+          this.spinner.hide();
+        }
+      });
+
     } catch (error) {
       this.spinner.hide();
       this.dialogRef.close();

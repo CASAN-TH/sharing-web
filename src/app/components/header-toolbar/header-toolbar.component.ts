@@ -51,12 +51,12 @@ export class HeaderToolbarComponent implements OnInit {
           user_id: this.userAuth._id
         }
         this.point = await this.pointservice.getPoint(body);
-        console.log(this.point)
+        // console.log(this.point)
         if (!this.point.data[0].total) {
           this.remainpoint = 0;
         } else {
           this.remainpoint = this.point.data[0].total - this.point.data[0].used;
-          console.log(this.remainpoint)
+          // console.log(this.remainpoint)
         }
       }
     } catch (error) {

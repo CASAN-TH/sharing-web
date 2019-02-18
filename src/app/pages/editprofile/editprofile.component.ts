@@ -64,9 +64,9 @@ export class EditprofileComponent implements OnInit {
     try {
       const res: any = await this.meService.editProfile(body);
       // console.log(res);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/profile']);
     } catch (error) {
-      // console.log(error);
+      // console.log (error);
     }
   }
 
