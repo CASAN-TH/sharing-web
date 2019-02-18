@@ -98,6 +98,9 @@ export class DonateDetailComponent implements OnInit {
       const res: any = await this.donateDetailService.updateStatus(body);
       const resTotal: any = await this.pointService.addTotal(body2);
       const resUserd: any = await this.pointService.addUsed(body3);
+      if(res){
+        this.pointService.updatePoint.emit();
+      }
       this.dialogRef.close('confirm');
     } catch (error) {
       this.spinner.hide();
