@@ -25,6 +25,9 @@ export class HeaderToolbarComponent implements OnInit {
         this.getPoint();
       }
     });
+    this.pointservice.updatePoint.subscribe(() => {
+      this.getPoint();
+    });
     this.userAuth = this.userAuthSrv.user;
   }
   onLogout() {
