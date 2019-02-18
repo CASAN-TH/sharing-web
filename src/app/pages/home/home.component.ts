@@ -88,7 +88,13 @@ export class HomeComponent implements OnInit {
       this.spinner.hide();
       throw error
     }
-  }
+  };
+  
+  onEnter(event){
+    if(event.key ==="Enter"){
+      this.searchData();
+    }
+  };
 
   // async getDonate() {
   //   if (this.afterClosed) {

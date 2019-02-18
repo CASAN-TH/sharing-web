@@ -1,10 +1,10 @@
 <div name="divContent" class="content">
     <div name="divRowMt4" class="row mt-4 mb-3">
         <div name="divCol61" class="col-10 ">
-            <mat-form-field style="width: 50%" class="example-form-field">
-                <span matPrefix style="position: relative;top: -3px;">ค้นหา : &nbsp;</span>
-                <input matInput type="text" class="height-input" [(ngModel)]="search.keyword" (ngModelChange)="searchData()">
-                <mat-icon matSuffix>search</mat-icon>
+            <mat-form-field name="matFormFieldSearch" style="width: 50%" class="example-form-field">
+                <span name="spanSearch" matPrefix style="position: relative;top: -3px;">ค้นหา : &nbsp;</span>
+                <input name="inputSearch" matInput type="text" class="height-input" [(ngModel)]="search.keyword" (keydown)="onEnter($event)">
+                <mat-icon name="iconSearch" matSuffix class="pointer" (click)="searchData()">search</mat-icon>
             </mat-form-field>
         </div>
         <div name="divCol62" class="col-2 center">
@@ -24,13 +24,19 @@
                 style="border-radius: 2%" [src]="item.image[0].url" (click)="onModalDetail(item)">
             <img *ngIf="item && item.image && item.image.length < 1" name="imageCardShirt" class="img-style border-image pointer "
                 src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1548731775/web-sharing/no-image.png" (click)="onModalDetail(item)">
-            <div class="text-overflow text-image border-radius pointer" style="padding-top: 5px;padding-bottom: 5px"
+            <div name="btnImageOpenDetail" class="text-overflow text-image border-radius pointer" style="padding-top: 5px;padding-bottom: 5px"
                 (click)="onModalDetail(item)">
-                <div style="padding-left: 10px;padding-bottom: 10px">
+                <div name="divDetailTitle" style="padding-left: 10px;padding-bottom: 10px">
                     <p style="margin-bottom: 0px" class="font-prod">{{item.name}}</p>
                     <p style="margin-bottom: 0px" class="font-prod">ขนาด : {{item.size}}</p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div name="divNgifNoBysize" class="row center" *ngIf="bySize && bySize.data && bySize.data.length === 0">
+        <div name="divContentNoBysize">
+            ไม่มีสินค้าบริจาค
         </div>
     </div>
 
