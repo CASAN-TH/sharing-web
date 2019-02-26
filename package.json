@@ -30,7 +30,7 @@
     "ng-mat-search-bar": "^3.0.1",
     "ng-simple-slideshow": "^1.2.7",
     "ng6-md-auth": "0.0.12",
-    "ngx-spinner": "^6.1.2",
+    "ngx-spinner": "^7.0.0",
     "rxjs": "6.3.3",
     "rxjs-compat": "^6.3.3",
     "videogular": "^2.2.1",
