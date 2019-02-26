@@ -5,8 +5,8 @@
   <div class="col-0 col-sm-0 col-md-1"></div>
 
   <div class="col-12 col-sm-12 col-md-10">
-    <div class="row">
-      <div class="col-6 col-sm-6 col-md-4" *ngFor="let item of data.data">
+    <div class="row scroll-x">
+      <div class="col-6 col-sm-6 col-md-4 height-prod" *ngFor="let item of data.data">
         <img *ngIf="item && item.image && item.image.length > 0" class="img-style border-image pointer "
           style="border-radius: 2%" [src]="item.image[0].url">
         <img *ngIf="item && item.image && item.image.length < 1" class="img-style border-image pointer "

@@ -38,3 +38,13 @@
     color: white;
     font-weight: bold;
 }
+
+.scroll-x {
+    overflow: auto;
+    overflow-x: scroll;
+    display:-webkit-inline-box;
+}
+
+.height-prod {
+    height: 220px;
+}
