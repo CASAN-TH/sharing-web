@@ -79,4 +79,8 @@ export class HeaderToolbarComponent implements OnInit {
   openLogin() {
     this.router.navigate(["login"]);
   }
+
+  openIntroduce(){
+    this.router.navigate(["introduce"]);
+  }
 }

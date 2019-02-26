@@ -37,6 +37,7 @@ import { MatListModule } from '@angular/material/list';
 import { IntroduceComponent } from './pages/introduce/introduce.component';
 import { PointComponent } from './components/point/point.component';
 import { IntroduceProductComponent } from './components/introduce-product/introduce-product.component';
+import { WebboardComponent } from './components/webboard/webboard.component';
 
 
 
@@ -59,7 +60,8 @@ const apiSrvCfg = environment;
     DonateHistoryComponent,
     IntroduceComponent,
     PointComponent,
-    IntroduceProductComponent
+    IntroduceProductComponent,
+    WebboardComponent
   ],
   imports: [
     BrowserModule,
