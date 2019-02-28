@@ -1,8 +1,8 @@
 <div class="content">
     <div class="row">
         <div class="col-12">
-            <div style="display:block; width: 100%">
-                <slideshow [imageUrls]="images" [height]="'400px'" [minHeight]="" [showArrows]="false" [autoPlay]="true"
+            <div style="display:block; width: 100%" *ngIf="images && images.data">
+                <slideshow [imageUrls]="images.data" [height]="'400px'" [minHeight]="" [showArrows]="false" [autoPlay]="true"
                     [autoPlayInterval]="5000" [backgroundSize]="'cover'" [showDots]="true" [dotColor]="'#010101'"
                     [lazyLoad]="true" [autoPlayWaitForLazyLoad]="true" [hideOnNoSlides]="true">
                 </slideshow>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-introduce',
@@ -7,22 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroduceComponent implements OnInit {
 
-  images: any = [
-    {
-        "url": "https://cdn.pixabay.com/photo/2017/01/26/23/48/love-2011994_1280.png"
-    },
-    {
-        "url": "https://image.shutterstock.com/z/stock-photo-group-portrait-of-two-white-caucasian-cute-adorable-funny-children-toddlers-sitting-together-617915693.jpg"
-    },
-    {
-        "url": "https://cdn.pixabay.com/photo/2015/09/10/16/19/alive-934671_1280.jpg"
-    }
-]
+  images: any;
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
+    this.getImageData();
+  }
+
+  async getImageData(){
+    this.images = await this.http.get('../../../assets/json/introduce.json').toPromise();
+    console.log(this.images);
   }
 
 }
