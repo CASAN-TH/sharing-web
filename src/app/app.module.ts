@@ -38,6 +38,7 @@ import { IntroduceComponent } from './pages/introduce/introduce.component';
 import { PointComponent } from './components/point/point.component';
 import { IntroduceProductComponent } from './components/introduce-product/introduce-product.component';
 import { WebboardComponent } from './components/webboard/webboard.component';
+import { ModalContentComponent } from './modals/modal-content/modal-content.component';
 
 
 
@@ -61,7 +62,8 @@ const apiSrvCfg = environment;
     IntroduceComponent,
     PointComponent,
     IntroduceProductComponent,
-    WebboardComponent
+    WebboardComponent,
+    ModalContentComponent
   ],
   imports: [
     BrowserModule,

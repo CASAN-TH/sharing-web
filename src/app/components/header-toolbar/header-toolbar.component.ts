@@ -33,7 +33,7 @@ export class HeaderToolbarComponent implements OnInit {
   onLogout() {
     this.userAuthSrv.logout();
     this.remainpoint = 0;
-    this.router.navigate(["/introduce"]);
+    this.router.navigate(["/login"]);
   }
 
   onClickToHome() {
