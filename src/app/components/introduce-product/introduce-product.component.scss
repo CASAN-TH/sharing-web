@@ -42,7 +42,9 @@
 .scroll-x {
     overflow: auto;
     overflow-x: scroll;
-    display:-webkit-inline-box;
+    // display:-webkit-inline-box;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .height-prod {
